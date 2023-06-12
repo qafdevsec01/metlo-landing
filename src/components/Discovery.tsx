@@ -1,27 +1,46 @@
-import Button from "./Button";
-import { VStack } from "./Stack";
+import { HStack, VStack } from "./Stack";
+
+const DiscoveryFeature = () => (
+  <VStack space={2}>
+    <HStack>
+      <p className="text-gray-200 text-xl">Lorem ipsum dolor</p>
+    </HStack>
+    <p className="text-gray-400">
+      Integer in nibh faucibus, efficitur sem a, scelerisque felis.
+    </p>
+  </VStack>
+);
 
 const Discovery = () => {
   return (
     <div className="max-w-6xl w-full mx-auto px-6 relative overflow-hidden">
-      <div className="absolute top-0 h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[50px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[100px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[150px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[200px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[250px] h-[1px] bg-griddark w-full"></div>
-      <div className="mt-[25px] w-full">
-        <VStack align="center" className="w-full">
-          <p className="pb-4 text-metloblue">Protection</p>
-          <p className="pb-6 text-4xl text-gray-200">Realtime API Protection</p>
-          <p className="pb-4 text-gray-400 max-w-xl w-full text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-            velit id tortor cursus mattis. Integer in nibh faucibus, efficitur
-            sem a, scelerisque felis. Mauris auctor vitae nulla nec scelerisque.
-          </p>
-          <Button className="w-32">{`Learn More >`}</Button>
-        </VStack>
-      </div>
+      <VStack align="center" space={4}>
+        <p className="text-metloblue">Discovery</p>
+        <p className="text-4xl text-gray-200">
+          Create an Inventory of your Endpoints
+        </p>
+        <p className="text-gray-400 max-w-2xl w-full text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
+          velit id tortor cursus mattis. Integer in nibh faucibus.
+        </p>
+        <div className="flex w-full max-w-4xl mx-auto py-6">
+          <img
+            src="/endpoint_inventory.png"
+            alt="Inventory"
+            width="100%"
+            style={{ maxWidth: "100%" }}
+            className="mx-auto rounded-md border-2 border-secondarydark"
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <DiscoveryFeature />
+          <DiscoveryFeature />
+          <DiscoveryFeature />
+          <DiscoveryFeature />
+          <DiscoveryFeature />
+          <DiscoveryFeature />
+        </div>
+      </VStack>
     </div>
   );
 };

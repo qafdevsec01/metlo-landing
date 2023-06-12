@@ -1,3 +1,4 @@
+import Discovery from "@/components/Discovery";
 import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
 import Metrics from "@/components/Metrics";
@@ -12,6 +13,7 @@ export default function Home() {
       <VStack className="w-full pb-32" space={32}>
         <Hero />
         <Protection />
+        <Discovery />
         <Integrations />
         <Metrics />
       </VStack>
