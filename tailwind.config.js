@@ -14,6 +14,8 @@ module.exports = {
       },
       colors: {
         metloblue: "rgb(76, 131, 237)",
+        metloblueGradientEnd: "rgb(13, 101, 151)",
+        metloblueHover: "rgb(76, 131, 237, 0.7)",
         dark: "rgb(16, 17, 19)",
         secondarydark: "rgb(63, 63, 65)",
         griddark: "rgb(31, 33, 35)",

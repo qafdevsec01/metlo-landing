@@ -58,10 +58,12 @@ const NavBar = () => {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <Button href="/login" variant="outline">
+            <Button href="/login" variant="link">
               Log in
             </Button>
-            <Button href="#">Sign Up</Button>
+            <Button href="#" variant="gradient">
+              Sign Up
+            </Button>
           </div>
         </Container>
       </nav>
