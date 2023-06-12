@@ -9,8 +9,8 @@ export default (
   >
     <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-        <stop stop-color="#4AD8AC" offset="0%"></stop>
-        <stop stop-color="#4076C4" offset="100%"></stop>
+        <stop stopColor="#4AD8AC" offset="0%"></stop>
+        <stop stopColor="#4076C4" offset="100%"></stop>
       </linearGradient>
     </defs>
     <g>

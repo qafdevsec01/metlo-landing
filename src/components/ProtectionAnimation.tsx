@@ -73,14 +73,7 @@ const ProtectionAnimation = () => {
             backdropFilter: "blur(2px)",
           }}
         >
-          <Image
-            src="/logo.svg"
-            alt="Metlo"
-            className="dark:invert"
-            width={48}
-            height={48}
-            priority
-          />
+          <Image src="/logo.svg" alt="Metlo" width={48} height={48} priority />
         </div>
       </div>
     </div>

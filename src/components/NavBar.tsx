@@ -27,7 +27,10 @@ const NavBar = () => {
   return (
     <header
       className="w-full sticky top-0 z-50"
-      style={{ backdropFilter: "blur(10px)", backgroundColor: "rgb(0, 0, 0, 0.7)" }}
+      style={{
+        backdropFilter: "blur(10px)",
+        backgroundColor: "rgb(0, 0, 0, 0.7)",
+      }}
     >
       <nav>
         <Container className="relative z-50 flex justify-between py-4">
@@ -37,7 +40,6 @@ const NavBar = () => {
                 <Image
                   src="/logo.svg"
                   alt="Metlo"
-                  className="dark:invert"
                   width={24}
                   height={24}
                   priority
@@ -45,7 +47,6 @@ const NavBar = () => {
                 <Image
                   src="/wordmark.svg"
                   alt="Metlo"
-                  className="dark:invert"
                   width={80}
                   height={20}
                   priority
