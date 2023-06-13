@@ -17,7 +17,7 @@ const Discovery = () => {
     <div className="max-w-6xl w-full mx-auto px-6 relative overflow-hidden">
       <VStack align="center" space={4}>
         <p className="text-metloblue">Discovery</p>
-        <p className="text-4xl text-gray-200">
+        <p className="text-4xl text-gray-200 text-center">
           Create an Inventory of your Endpoints
         </p>
         <p className="text-gray-400 max-w-2xl w-full text-center">
