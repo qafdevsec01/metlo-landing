@@ -144,18 +144,25 @@ const Language = ({
   children,
   onClick,
   itemCount,
+  isSelected,
 }: {
   title: string;
   children: React.ReactNode;
   onClick: () => void;
   itemCount: number;
+  isSelected: boolean;
 }) => (
   <HStack
     align="center"
     space={2}
-    className="px-2.5 py-2 w-32 cursor-pointer border-r border-secondarydark bg-dark example-box"
+    className={`px-2.5 py-2 w-32 cursor-pointer border-r border-secondarydark bg-dark example-box ${
+      isSelected ? "selected-example-background " : ""
+    }`}
     onClick={onClick}
-    style={{ flexBasis: `${Math.round(100 / itemCount)}%`, flexShrink: 0 }}
+    style={{
+      flexBasis: `${Math.round(100 / itemCount)}%`,
+      flexShrink: 0,
+    }}
   >
     <div className="w-6 h-6">{children}</div>
     <HStack className="flex-equal-2" style={{ flexGrow: 1 }}>
@@ -178,6 +185,7 @@ const IntegrationExample = () => {
                 setLanguage(name as languageExamples);
               }}
               itemCount={arr.length}
+              isSelected={language === (name as languageExamples)}
             >
               {map_language_to_icon(name as languageExamples)}
             </Language>

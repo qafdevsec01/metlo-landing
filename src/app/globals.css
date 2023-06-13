@@ -122,6 +122,10 @@ body {
   flex-shrink: 0;
 }
 
+.selected-example-background {
+  background-color: #1d1f21;
+}
+
 .herogradient {
   filter: blur(150px);
   background-image: linear-gradient(rgba(55, 235, 169, 0.85), #5b37eb);
