@@ -16,7 +16,7 @@ enum languageExamples {
   python = "Python",
   aws = "AWS",
   kubernetes = "Kubernetes",
-  docker = "Docker",
+  // docker = "Docker",
 }
 
 const map_language_to_icon = (lang: languageExamples) => {
@@ -29,8 +29,6 @@ const map_language_to_icon = (lang: languageExamples) => {
       return aws;
     case languageExamples.kubernetes:
       return kubernetes;
-    case languageExamples.docker:
-      return docker;
     default:
       console.log("Fell to default");
       return <></>;
@@ -43,8 +41,8 @@ const MapLanguageToExample = ({ lang }: { lang: languageExamples }) => {
       return (
         // @ts-ignore
         <Highlight className="typescript h-full" element="div">
-          <pre className="h-full">
-            <code className="h-full text-sm">
+          <pre className="h-full pre-code">
+            <code className="h-full text-sm overflow-scroll">
               {`import { initExpress as metlo } from "metlo";
 ...
 const app = express();
@@ -65,8 +63,8 @@ app.use(
       return (
         // @ts-ignore
         <Highlight className="python h-full" element="div">
-          <pre className="h-full">
-            <code className="h-full text-sm">
+          <pre className="h-full pre-code">
+            <code className="h-full text-sm overflow-scroll">
               {`from flask import Flask
 
 from metlo.flask import MetloFlask
@@ -82,8 +80,8 @@ MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")
       return (
         // @ts-ignore
         <Highlight className="h-full" element="div">
-          <pre className="h-full">
-            <code className="h-full text-sm">
+          <pre className="h-full pre-code">
+            <code className="h-full text-sm overflow-scroll">
               {`$ metlo traffic-mirror aws new
 ✔ Select your AWS region · us-west-2
 ✔ What type of source do you want to mirror? · instance
@@ -102,56 +100,35 @@ Success!
       return (
         // @ts-ignore
         <Highlight className="yaml h-full" element="div">
-          <pre className="h-full">
-            <code className="h-full text-sm">
-              {`kind: Pod
-apiVersion: v1
+          <pre className="h-full pre-code">
+            <code className="h-full text-sm overflow-scroll">
+              {`apiVersion: apps/v1
+kind: DaemonSet
 metadata:
-  name: test-app 
-  labels:
-    app: test-app 
+  name: metlo-app
 spec:
-  containers:
-  - name: test-app 
-    image: hashicorp/http-echo:0.2.3
-    args:
-    - "-text=Hello World! This is a Metlo Kubernetes with kind App"
-  - name: metlo-sidecar
-    image: metlo/agent
-    securityContext:
-      privileged: true
-    env:
-      - name: METLO_HOST
-        value: https://app.metlo.com:8081
-      - name: METLO_KEY
-        value: <YOUR_METLO_API_KEY>
-  `}
-            </code>
-          </pre>
-        </Highlight>
-      );
-    case languageExamples.docker:
-      return (
-        // @ts-ignore
-        <Highlight className="yaml h-full" element="div">
-          <pre className="h-full">
-            <code className="h-full text-sm">
-              {`version: "3.9"
-
-services:
-  <your-service>:
-    ...
-  metlo:
-    image: metlo/agent
-    network_mode: "service:<your-service>"
-    depends_on:
-      - <your-service>
-    cap_add:
-      - NET_ADMIN
-    environment:
-      - METLO_HOST=http://<YOUR_METLO_HOST>:8081
-      - METLO_KEY=<YOUR_METLO_API_KEY>
-      `}
+  selector:
+    matchLabels:
+      name: metlo-app
+  template:
+    metadata:
+      labels:
+        name: metlo-app
+    spec:
+      hostNetwork: true
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
+      containers:
+        - name: metlo-agent
+          image: metlo/agent
+          securityContext:
+            privileged: true
+          env:
+            - name: METLO_HOST
+              value: https://app.metlo.com:8081
+            - name: METLO_KEY
+              value: <YOUR_METLO_API_KEY>`}
             </code>
           </pre>
         </Highlight>
@@ -166,20 +143,23 @@ const Language = ({
   title,
   children,
   onClick,
+  itemCount,
 }: {
   title: string;
   children: React.ReactNode;
   onClick: () => void;
+  itemCount: number;
 }) => (
   <HStack
     align="center"
     space={2}
     className="px-2.5 py-2 w-32 cursor-pointer border-r border-secondarydark bg-dark example-box"
     onClick={onClick}
+    style={{ flexBasis: `${Math.round(100 / itemCount)}%`, flexShrink: 0 }}
   >
     <div className="w-6 h-6">{children}</div>
-    <HStack className="full-width">
-      <p className="text-gray-200 text-sm font-semibold margin-auto">{title}</p>
+    <HStack className="flex-equal-2">
+      <p className="text-gray-200 text-sm font-semibold m-auto">{title}</p>
     </HStack>
   </HStack>
 );
@@ -187,26 +167,28 @@ const Language = ({
 const IntegrationExample = () => {
   const [language, setLanguage] = useState(languageExamples.node);
   return (
-    <VStack className="w-full h-full border border-secondarydark">
-      <HStack className="w-full">
-        {Object.entries(languageExamples).map(([id, name], idx) => {
-          return (
-            <Language
-              title={name}
-              key={idx}
-              onClick={() => {
-                setLanguage(name as languageExamples);
-              }}
-            >
-              {map_language_to_icon(name as languageExamples)}
-            </Language>
-          );
-        })}
-      </HStack>
-      <div className="w-full h-full">
-        {<MapLanguageToExample lang={language} />}
-      </div>
-    </VStack>
+    <>
+      <div style={{ display: "flex", flexDirection: "row" }}></div>
+      <VStack className="flex-equal-2 h-full border border-secondarydark">
+        <HStack className="">
+          {Object.entries(languageExamples).map(([id, name], idx, arr) => {
+            return (
+              <Language
+                title={name}
+                key={idx}
+                onClick={() => {
+                  setLanguage(name as languageExamples);
+                }}
+                itemCount={arr.length}
+              >
+                {map_language_to_icon(name as languageExamples)}
+              </Language>
+            );
+          })}
+        </HStack>
+        <div className="h-full">{<MapLanguageToExample lang={language} />}</div>
+      </VStack>
+    </>
   );
 };
 

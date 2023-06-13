@@ -9,7 +9,7 @@ const Integrations = () => {
       <VStack p="8">
         <p className="pb-4 text-metloblue">Quick Setup</p>
         <HStack className="w-full" space={12}>
-          <VStack className="w-1/2">
+          <VStack className="flex-equal-2">
             <p className="pb-6 text-4xl text-gray-200">
               Deploy Metlo in Less Than 15 Minutes
             </p>
@@ -22,7 +22,7 @@ const Integrations = () => {
             <IntegrationGrid />
             <Button className="w-32">{`Docs >`}</Button>
           </VStack>
-          <div className="w-1/2">
+          <div style={{ overflowX: "auto" }} className="flex-equal-2">
             <IntegrationExample />
           </div>
         </HStack>
