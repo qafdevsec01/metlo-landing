@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 export interface StackProps {
   justify?: JustifyValues;
@@ -7,6 +7,7 @@ export interface StackProps {
   flexGap?: StackSpace;
   className?: string;
   children?: React.ReactNode;
+  style?: CSSProperties;
   [e: string]: any;
 }
 
@@ -101,8 +102,14 @@ const BaseStack: React.FC<StackProps & { dir: "vertical" | "horizontal" }> = ({
     style={
       flexGap
         ? dir === "vertical"
-          ? flexGap && { rowGap: `calc(${flexGap}rem/4)` }
-          : flexGap && { columnGap: `calc(${flexGap}rem/4)` }
+          ? props.style
+            ? { ...props.style, rowGap: `calc(${flexGap}rem/4)` }
+            : { rowGap: `calc(${flexGap}rem/4)` }
+          : props.style
+          ? { ...props.style, columnGap: `calc(${flexGap}rem/4)` }
+          : { columnGap: `calc(${flexGap}rem/4)` }
+        : props.style
+        ? { ...props.style }
         : {}
     }
   >
