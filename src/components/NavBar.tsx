@@ -7,9 +7,9 @@ const NavLinks: React.FC = () => {
   return (
     <>
       {[
-        ["Features", "#features"],
         ["Docs", "https://docs.metlo.com"],
         ["Blog", "https://blog.metlo.com"],
+        ["Pricing", "#features"],
       ].map(([label, href]) => (
         <Link
           key={label}

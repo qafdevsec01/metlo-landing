@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="w-full items-center justify-center flex flex-col">
       <p className="text-7xl mb-6 mt-12 text-white text-center">
-        Open Source API Security
+        Next Gen API Security
       </p>
       <p className="mt-1 text-lg mb-10 text-white max-w-2xl text-center">
         Metlo is an Open Source First API Security Tool that Protects your API.
