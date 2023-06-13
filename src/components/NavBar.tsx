@@ -29,7 +29,7 @@ const NavBar = () => {
       className="w-full sticky top-0 z-50"
       style={{
         backdropFilter: "blur(10px)",
-        backgroundColor: "rgb(0, 0, 0, 0.7)",
+        backgroundColor: "rgb(0, 0, 0, 0.5)",
       }}
     >
       <nav>
