@@ -3,8 +3,13 @@ import Button from "./Button";
 const Hero = () => {
   return (
     <div className="w-full items-center justify-center flex flex-col">
-      <p className="text-6xl font-medium mb-6 mt-12 text-white">Secure your API</p>
-      <p className="mt-1 text-lg mb-6 text-white">Metlo is an Open Source First API Security Tool that Protects your API.</p>
+      <p className="text-6xl font-medium mb-6 mt-12 text-white">
+        Secure your API
+      </p>
+      <p className="mt-1 text-lg mb-6 text-white max-w-2xl text-center">
+        Metlo is an Open Source First API Security Tool that Protects your API.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
       <div className="flex items-center gap-6 mb-16">
         <Button href="/login" variant="outline">
           Sign Up

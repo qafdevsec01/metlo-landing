@@ -5,15 +5,15 @@ import { VStack } from "./Stack";
 const Protection = () => {
   return (
     <div
-      className="max-w-6xl w-full mx-auto px-6 relative overflow-hidden"
+      className="max-w-6xl w-full mx-auto relative overflow-hidden"
       style={{ minHeight: "500px" }}
     >
-      <div className="absolute top-0 h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[50px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[100px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[150px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[200px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute top-[250px] h-[1px] bg-griddark w-full"></div>
+      <div className="absolute left-0 top-0 h-[1px] bg-griddark w-full"></div>
+      <div className="absolute left-0 top-[50px] h-[1px] bg-griddark w-full"></div>
+      <div className="absolute left-0 top-[100px] h-[1px] bg-griddark w-full"></div>
+      <div className="absolute left-0 top-[150px] h-[1px] bg-griddark w-full"></div>
+      <div className="absolute left-0 top-[200px] h-[1px] bg-griddark w-full"></div>
+      <div className="absolute left-0 top-[250px] h-[1px] bg-griddark w-full"></div>
       <ProtectionAnimation />
       <div className="mt-[25px] w-full">
         <VStack align="center" className="w-full">

@@ -1,4 +1,5 @@
 import { HStack, VStack } from "./Stack";
+import Image from "next/image";
 
 const DiscoveryFeature = () => (
   <VStack space={2}>
@@ -24,11 +25,13 @@ const Discovery = () => {
           velit id tortor cursus mattis. Integer in nibh faucibus.
         </p>
         <div className="flex w-full max-w-4xl mx-auto py-6">
-          <img
+          <Image
             src="/endpoint_inventory.png"
             alt="Inventory"
-            width="100%"
-            style={{ maxWidth: "100%" }}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
             className="mx-auto rounded-md border-2 border-secondarydark"
           />
         </div>

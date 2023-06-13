@@ -90,3 +90,16 @@ body {
       rgba(0, 0, 0, 0.85) 200px
   );
 }
+
+.leftbordershadow {
+  animation: leftborderglow 2s infinite alternate;
+}
+
+@keyframes leftborderglow {
+  0% {
+    box-shadow: 10px 0 15px 0px #fff;
+  }
+  100% {
+    box-shadow: 10px 0 30px 0px #fff;
+  }
+}
