@@ -41,7 +41,7 @@ const MapLanguageToExample = ({ lang }: { lang: languageExamples }) => {
       return (
         // @ts-ignore
         <Highlight className="typescript h-full" element="div">
-          <pre className="h-full pre-code">
+          <pre className="h-full ">
             <code className="h-full text-sm overflow-scroll">
               {`import { initExpress as metlo } from "metlo";
 ...
@@ -63,7 +63,7 @@ app.use(
       return (
         // @ts-ignore
         <Highlight className="python h-full" element="div">
-          <pre className="h-full pre-code">
+          <pre className="h-full ">
             <code className="h-full text-sm overflow-scroll">
               {`from flask import Flask
 
@@ -80,7 +80,7 @@ MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")
       return (
         // @ts-ignore
         <Highlight className="h-full" element="div">
-          <pre className="h-full pre-code">
+          <pre className="h-full ">
             <code className="h-full text-sm overflow-scroll">
               {`$ metlo traffic-mirror aws new
 ✔ Select your AWS region · us-west-2
@@ -100,7 +100,7 @@ Success!
       return (
         // @ts-ignore
         <Highlight className="yaml h-full" element="div">
-          <pre className="h-full pre-code">
+          <pre className="h-full ">
             <code className="h-full text-sm overflow-scroll">
               {`apiVersion: apps/v1
 kind: DaemonSet
@@ -158,7 +158,7 @@ const Language = ({
     style={{ flexBasis: `${Math.round(100 / itemCount)}%`, flexShrink: 0 }}
   >
     <div className="w-6 h-6">{children}</div>
-    <HStack className="flex-equal-2">
+    <HStack className="flex-equal-2" style={{ flexGrow: 1 }}>
       <p className="text-gray-200 text-sm font-semibold m-auto">{title}</p>
     </HStack>
   </HStack>
@@ -167,28 +167,25 @@ const Language = ({
 const IntegrationExample = () => {
   const [language, setLanguage] = useState(languageExamples.node);
   return (
-    <>
-      <div style={{ display: "flex", flexDirection: "row" }}></div>
-      <VStack className="flex-equal-2 h-full border border-secondarydark">
-        <HStack className="">
-          {Object.entries(languageExamples).map(([id, name], idx, arr) => {
-            return (
-              <Language
-                title={name}
-                key={idx}
-                onClick={() => {
-                  setLanguage(name as languageExamples);
-                }}
-                itemCount={arr.length}
-              >
-                {map_language_to_icon(name as languageExamples)}
-              </Language>
-            );
-          })}
-        </HStack>
-        <div className="h-full">{<MapLanguageToExample lang={language} />}</div>
-      </VStack>
-    </>
+    <VStack className="h-full border border-secondarydark">
+      <HStack className="">
+        {Object.entries(languageExamples).map(([id, name], idx, arr) => {
+          return (
+            <Language
+              title={name}
+              key={idx}
+              onClick={() => {
+                setLanguage(name as languageExamples);
+              }}
+              itemCount={arr.length}
+            >
+              {map_language_to_icon(name as languageExamples)}
+            </Language>
+          );
+        })}
+      </HStack>
+      <div className="h-full">{<MapLanguageToExample lang={language} />}</div>
+    </VStack>
   );
 };
 

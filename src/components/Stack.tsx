@@ -4,6 +4,7 @@ export interface StackProps {
   justify?: JustifyValues;
   align?: AlignValues;
   space?: StackSpace;
+  flexGap?: StackSpace;
   className?: string;
   children?: React.ReactNode;
   [e: string]: any;
@@ -26,7 +27,22 @@ const alignValues: Record<AlignValues, string> = {
   end: "items-end",
 };
 
-type StackSpace = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 12 | 14 | 16 | 32;
+type StackSpace =
+  | 0
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 12
+  | 14
+  | 16
+  | 32;
 
 const vSpaces: Record<StackSpace, string> = {
   0: "space-y-0",
@@ -70,6 +86,7 @@ const BaseStack: React.FC<StackProps & { dir: "vertical" | "horizontal" }> = ({
   align,
   space,
   children,
+  flexGap,
   ...props
 }) => (
   <div
@@ -81,6 +98,13 @@ const BaseStack: React.FC<StackProps & { dir: "vertical" | "horizontal" }> = ({
       justify != null ? justifyValues[justify] : "",
       align != null ? alignValues[align] : "",
     ].join(" ")}
+    style={
+      flexGap
+        ? dir === "vertical"
+          ? flexGap && { rowGap: `calc(${flexGap}rem/4)` }
+          : flexGap && { columnGap: `calc(${flexGap}rem/4)` }
+        : {}
+    }
   >
     {children}
   </div>

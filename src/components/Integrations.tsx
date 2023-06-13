@@ -8,7 +8,7 @@ const Integrations = () => {
     <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
       <VStack p="8">
         <p className="pb-4 text-metloblue">Quick Setup</p>
-        <HStack className="w-full" space={12}>
+        <HStack className="w-full" flexGap={12}>
           <VStack className="flex-equal-2">
             <p className="pb-6 text-4xl text-gray-200">
               Deploy Metlo in Less Than 15 Minutes

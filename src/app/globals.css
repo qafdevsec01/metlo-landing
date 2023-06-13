@@ -109,17 +109,14 @@ body {
 }
 
 .overflow-scroll {
-  overflow: scroll;
-}
-
-.pre-code {
-  white-space: pre-wrap;
+  overflow-x: auto;
 }
 
 .flex-equal-2 {
   flex-basis: 50%;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
+
 .flex-equal-4 {
   flex-basis: 25%;
   flex-shrink: 0;
