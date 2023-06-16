@@ -112,26 +112,14 @@ body {
   filter: grayscale(100%);
 }
 
-.highlight_on_hover:hover {
-  -webkit-animation: hover-highlight-icon 0.5s linear both;
-  animation: hover-highlight-icon 0.5s linear both;
+.highlight_on_hover {
+  filter: grayscale(100%);
+  transition: filter 0.5s;
 }
 
-@-webkit-keyframes hover-highlight-icon {
-  0% {
-    filter: grayscale(100%);
-  }
-  100% {
-    filter: grayscale(50%);
-  }
-}
-@keyframes hover-highlight-icon {
-  0% {
-    filter: grayscale(100%);
-  }
-  100% {
-    filter: grayscale(50%);
-  }
+.highlight_on_hover:hover {
+  filter: grayscale(50%);
+  transition: filter 0.5s;
 }
 
 .overflow-x-scroll {
@@ -158,6 +146,29 @@ body {
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
+.language-grid-icon{
+  background-color: transparent;
+  transition: background-color 0.5s;
+}
+
 .language-grid-icon:hover {
   background-color: #e7e7e70f;
+  transition: background-color 0.5s;
 }
+
+/* @-webkit-keyframes hover-color-background {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #e7e7e70f;;
+  }
+}
+@keyframes hover-color-background {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #e7e7e70f;;
+  }
+} */
