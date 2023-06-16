@@ -24,7 +24,7 @@ const Language = ({
     <VStack
       align="center"
       space={4}
-      className="px-8 py-4 m-2 w-40 rounded-md cursor-pointer border border-secondarydark bg-dark"
+      className="px-8 py-4 m-2 w-40 rounded-md cursor-pointer border border-secondarydark bg-dark language-grid-icon"
     >
       <div className="w-10 h-10">{children}</div>
       <p className="text-gray-200 text-xs font-semibold">{title}</p>
