@@ -155,20 +155,3 @@ body {
   background-color: #e7e7e70f;
   transition: background-color 0.5s;
 }
-
-/* @-webkit-keyframes hover-color-background {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: #e7e7e70f;;
-  }
-}
-@keyframes hover-color-background {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: #e7e7e70f;;
-  }
-} */
