@@ -42,7 +42,7 @@ const MapLanguageToExample = ({ lang }: { lang: languageExamples }) => {
         // @ts-ignore
         <Highlight className="typescript h-full" element="div">
           <pre className="h-full ">
-            <code className="h-full text-sm overflow-scroll">
+            <code className="h-full text-sm overflow-x-scroll">
               {`import { initExpress as metlo } from "metlo";
 ...
 const app = express();
@@ -64,7 +64,7 @@ app.use(
         // @ts-ignore
         <Highlight className="python h-full" element="div">
           <pre className="h-full ">
-            <code className="h-full text-sm overflow-scroll">
+            <code className="h-full text-sm overflow-x-scroll">
               {`from flask import Flask
 
 from metlo.flask import MetloFlask
@@ -81,7 +81,7 @@ MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")
         // @ts-ignore
         <Highlight className="h-full" element="div">
           <pre className="h-full ">
-            <code className="h-full text-sm overflow-scroll">
+            <code className="h-full text-sm" style={{ overflowX: "auto" }}>
               {`$ metlo traffic-mirror aws new
 ✔ Select your AWS region · us-west-2
 ✔ What type of source do you want to mirror? · instance
@@ -101,7 +101,7 @@ Success!
         // @ts-ignore
         <Highlight className="yaml h-full" element="div">
           <pre className="h-full ">
-            <code className="h-full text-sm overflow-scroll">
+            <code className="h-full text-sm overflow-x-scroll">
               {`apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -156,7 +156,9 @@ const Language = ({
     align="center"
     space={2}
     className={`px-2.5 py-2 w-32 cursor-pointer border-r border-secondarydark bg-dark example-box ${
-      isSelected ? "selected-example-background " : ""
+      isSelected
+        ? "selected-example-background"
+        : "icon-filter highlight_on_hover"
     }`}
     onClick={onClick}
     style={{

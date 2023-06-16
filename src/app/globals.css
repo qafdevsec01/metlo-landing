@@ -108,7 +108,33 @@ body {
   border-right: white;
 }
 
-.overflow-scroll {
+.icon-filter {
+  filter: grayscale(100%);
+}
+
+.highlight_on_hover:hover {
+  -webkit-animation: hover-highlight-icon 0.5s linear both;
+  animation: hover-highlight-icon 0.5s linear both;
+}
+
+@-webkit-keyframes hover-highlight-icon {
+  0% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(50%);
+  }
+}
+@keyframes hover-highlight-icon {
+  0% {
+    filter: grayscale(100%);
+  }
+  100% {
+    filter: grayscale(50%);
+  }
+}
+
+.overflow-x-scroll {
   overflow-x: auto;
 }
 
@@ -130,4 +156,8 @@ body {
   filter: blur(150px);
   background-image: linear-gradient(rgba(55, 235, 169, 0.85), #5b37eb);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.language-grid-icon:hover {
+  background-color: #e7e7e70f;
 }
