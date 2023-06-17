@@ -5,6 +5,7 @@ import Integrations from "@/components/Integrations";
 import Metrics from "@/components/Metrics";
 import NavBar from "@/components/NavBar";
 import Protection from "@/components/Protection";
+import ProtectionDetailed from "@/components/ProtectionDetailed";
 import { VStack } from "@/components/Stack";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <VStack className="w-full" space={32}>
         <Hero />
         <Protection />
+        <ProtectionDetailed />
         <Discovery />
         <Integrations />
         <Metrics />
