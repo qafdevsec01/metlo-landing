@@ -55,17 +55,21 @@ const Integrations = () => {
     <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
       <VStack align="center" space={4}>
         <p className="text-metloblue">Quick Setup</p>
-        <p className="pb-6 text-4xl text-gray-200 text-center">
+        <p className="text-4xl text-gray-200 text-center">
           Deploy Metlo in Less Than 15 Minutes
         </p>
+        <p className="text-gray-400 pb-6 max-w-2xl w-full text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
+          velit id tortor cursus mattis. Integer in nibh faucibus.
+        </p>
         <HStack
-          className="w-full justify-center items-center overflow-x-auto pb-8"
+          className="w-full justify-center items-center flex-wrap overflow-x-auto pb-4"
           space={6}
         >
           {Object.entries(Language).map(([id, name], idx, arr) => (
             <VStack
               key={id}
-              className={`cursor-pointer`}
+              className="cursor-pointer mb-6"
               onClick={() => {
                 setLanguage({
                   language: name,
@@ -158,7 +162,7 @@ const Integrations = () => {
             style={{ height: "1px", border: "none" }}
           />
           <SyntaxHighlighter
-            className="max-h-96 h-96 !bg-transparent"
+            className="h-[500px] !bg-transparent"
             language={FRAMEWORK_TO_HIGHLIGHT_LANGUAGE_MAP[language.framework]}
             style={vs2015}
             showLineNumbers={showLineNumbers(language.framework)}
