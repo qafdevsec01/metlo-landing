@@ -1,6 +1,6 @@
-import Button from "./Button";
+import Button from "../Button";
 import ProtectionAnimation from "./ProtectionAnimation";
-import { VStack } from "./Stack";
+import { VStack } from "../Stack";
 
 const Protection = () => {
   return (
