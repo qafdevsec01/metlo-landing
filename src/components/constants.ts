@@ -5,6 +5,9 @@ import DockerLogo from "./IntegrationLogos/docker";
 import KubernetesLogo from "./IntegrationLogos/kubernetes";
 import ExpressLogo from "./IntegrationLogos/express"
 import KoaLogo from "./IntegrationLogos/koa"
+import FastifyLogo from "./IntegrationLogos/fastify"
+import FlaskLogo from "./IntegrationLogos/flask"
+import DjangoLogo from "./IntegrationLogos/django"
 
 export enum Language {
   node = "Node",
@@ -47,9 +50,9 @@ export const LANGUAGE_TO_ICON_MAP: Record<Language, any> = {
 export const FRAMEWORK_TO_ICON_MAP: Record<Framework, any> = {
   [Framework.express]: ExpressLogo,
   [Framework.koa]: KoaLogo,
-  [Framework.fastify]: NodeLogo,
-  [Framework.flask]: PythonLogo,
-  [Framework.django]: PythonLogo,
+  [Framework.fastify]: FastifyLogo,
+  [Framework.flask]: FlaskLogo,
+  [Framework.django]: DjangoLogo,
   [Framework.aws]: AwsLogo,
   [Framework.kubernetes]: KubernetesLogo,
 };
