@@ -1,31 +1,149 @@
-import Button from "./Button";
-import IntegrationExample from "./IntegrationExample";
-import IntegrationGrid from "./IntegrationGrid";
+"use client";
+
+import { useState } from "react";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import typescript from "react-syntax-highlighter/dist/esm/languages/hljs/typescript";
+import python from "react-syntax-highlighter/dist/esm/languages/hljs/python";
+import bash from "react-syntax-highlighter/dist/esm/languages/hljs/bash";
+import yaml from "react-syntax-highlighter/dist/esm/languages/hljs/yaml";
+import vs2015 from "react-syntax-highlighter/dist/esm/styles/hljs/vs2015";
 import { HStack, VStack } from "./Stack";
+import {
+  FRAMEWORK_TO_HIGHLIGHT_LANGUAGE_MAP,
+  FRAMEWORK_TO_ICON_MAP,
+  FRAMEWORK_TO_TEXT_MAP,
+  Framework,
+  LANGUAGE_FRAMEWORKS,
+  LANGUAGE_TO_ICON_MAP,
+  Language,
+} from "./constants";
+import clipboard from "./Icons/clipboard";
+
+SyntaxHighlighter.registerLanguage("typescript", typescript);
+SyntaxHighlighter.registerLanguage("python", python);
+SyntaxHighlighter.registerLanguage("bash", bash);
+SyntaxHighlighter.registerLanguage("yaml", yaml);
+
+const showLineNumbers = (framework: Framework) => {
+  switch (framework) {
+    case Framework.aws:
+      return false;
+    default:
+      return true;
+  }
+};
 
 const Integrations = () => {
+  const [language, setLanguage] = useState({
+    language: Language.node,
+    framework: Framework.express,
+    text: FRAMEWORK_TO_TEXT_MAP[Framework.express],
+  });
   return (
     <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
-      <VStack p="8">
-        <p className="pb-4 text-metloblue">Quick Setup</p>
-        <HStack className="w-full" flexGap={12}>
-          <VStack className="flex-equal-2">
-            <p className="pb-6 text-4xl text-gray-200">
-              Deploy Metlo in Less Than 15 Minutes
-            </p>
-            <p className="pb-4 text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-              velit id tortor cursus mattis. Integer in nibh faucibus, efficitur
-              sem a, scelerisque felis. Mauris auctor vitae nulla nec
-              scelerisque.
-            </p>
-            <IntegrationGrid />
-            <Button className="w-32">{`Docs >`}</Button>
-          </VStack>
-          <div style={{ overflowX: "auto" }} className="flex-equal-2">
-            <IntegrationExample />
-          </div>
+      <VStack align="center" space={4}>
+        <p className="text-metloblue">Quick Setup</p>
+        <p className="pb-6 text-4xl text-gray-200 text-center">
+          Deploy Metlo in Less Than 15 Minutes
+        </p>
+        <HStack
+          className="w-full justify-center items-center overflow-x-auto pb-8"
+          space={6}
+        >
+          {Object.entries(Language).map(([id, name], idx, arr) => (
+            <VStack
+              key={id}
+              className={`cursor-pointer`}
+              onClick={() =>
+                setLanguage({
+                  language: name,
+                  framework: LANGUAGE_FRAMEWORKS[name][0],
+                  text: FRAMEWORK_TO_TEXT_MAP[LANGUAGE_FRAMEWORKS[name][0]],
+                })
+              }
+              align="center"
+              space={6}
+            >
+              <div
+                className={`w-24 h-20 px-6 py-4 cursor-pointer border rounded-md border-secondarydark ${
+                  language.language !== name && "icon-filter highlight_on_hover"
+                }`}
+              >
+                {LANGUAGE_TO_ICON_MAP[name]}
+              </div>
+              <p
+                className={`text-gray-${
+                  language.language === name ? "200" : "500"
+                } text-sm m-auto`}
+              >
+                {name}
+              </p>
+            </VStack>
+          ))}
         </HStack>
+        <VStack
+          className="w-full rounded-md overflow-hidden"
+          style={{
+            borderColor: "rgb(63, 63, 65)",
+            borderWidth: "1px",
+          }}
+        >
+          <HStack className="w-full justify-between p-4">
+            <HStack space={4}>
+              {Object.values(LANGUAGE_FRAMEWORKS[language.language]).map(
+                (e) => (
+                  <HStack
+                    key={e}
+                    className="h-10 cursor-pointer rounded-md overflow-hidden px-2 items-center"
+                    onClick={() =>
+                      setLanguage((old) => ({
+                        ...old,
+                        framework: e,
+                        text: FRAMEWORK_TO_TEXT_MAP[e],
+                      }))
+                    }
+                    style={
+                      language.framework === e
+                        ? {
+                            borderColor: "rgb(63, 63, 65)",
+                            borderWidth: "1px",
+                          }
+                        : {
+                            borderColor: "transparent",
+                            borderWidth: "1px",
+                          }
+                    }
+                    space={2}
+                  >
+                    <div className="h-6">{FRAMEWORK_TO_ICON_MAP[e]}</div>
+                    <p className="text-gray-500 text-sm m-auto">{e}</p>
+                  </HStack>
+                )
+              )}
+            </HStack>
+            <div
+              className="cursor-pointer h-6 w-6 mx-6 my-auto"
+              style={{
+                color: "rgb(107 114 128)",
+              }}
+              onClick={() => navigator.clipboard.writeText(language.text)}
+            >
+              {clipboard}
+            </div>
+          </HStack>
+          <hr
+            className="bg-secondarydark"
+            style={{ height: "1px", border: "none" }}
+          />
+          <SyntaxHighlighter
+            className="max-h-96 h-96 !bg-transparent"
+            language={FRAMEWORK_TO_HIGHLIGHT_LANGUAGE_MAP[language.framework]}
+            style={vs2015}
+            showLineNumbers={showLineNumbers(language.framework)}
+          >
+            {language.text}
+          </SyntaxHighlighter>
+        </VStack>
       </VStack>
     </div>
   );
