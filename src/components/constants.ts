@@ -3,8 +3,11 @@ import PythonLogo from "./IntegrationLogos/python";
 import AwsLogo from "./IntegrationLogos/aws";
 import DockerLogo from "./IntegrationLogos/docker";
 import KubernetesLogo from "./IntegrationLogos/kubernetes";
-import ExpressLogo from "./IntegrationLogos/express"
-import KoaLogo from "./IntegrationLogos/koa"
+import ExpressLogo from "./IntegrationLogos/express";
+import KoaLogo from "./IntegrationLogos/koa";
+import FastifyLogo from "./IntegrationLogos/fastify";
+import FlaskLogo from "./IntegrationLogos/flask";
+import DjangoLogo from "./IntegrationLogos/django";
 
 export enum Language {
   node = "Node",
@@ -47,9 +50,9 @@ export const LANGUAGE_TO_ICON_MAP: Record<Language, any> = {
 export const FRAMEWORK_TO_ICON_MAP: Record<Framework, any> = {
   [Framework.express]: ExpressLogo,
   [Framework.koa]: KoaLogo,
-  [Framework.fastify]: NodeLogo,
-  [Framework.flask]: PythonLogo,
-  [Framework.django]: PythonLogo,
+  [Framework.fastify]: FastifyLogo,
+  [Framework.flask]: FlaskLogo,
+  [Framework.django]: DjangoLogo,
   [Framework.aws]: AwsLogo,
   [Framework.kubernetes]: KubernetesLogo,
 };
@@ -106,8 +109,7 @@ fastify.register(
 from metlo.flask import MetloFlask
 
 app = Flask(__name__)
-MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")
-`,
+MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")`,
   [Framework.django]: `MIDDLEWARE = [
   ...,
   "metlo.django.MetloDjango",

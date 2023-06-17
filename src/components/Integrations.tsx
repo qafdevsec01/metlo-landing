@@ -18,6 +18,7 @@ import {
   Language,
 } from "./constants";
 import clipboard from "./Icons/clipboard";
+import checkCircle from "./Icons/check-circle";
 
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("python", python);
@@ -39,6 +40,7 @@ const Integrations = () => {
     framework: Framework.express,
     text: FRAMEWORK_TO_TEXT_MAP[Framework.express],
   });
+  const [copied, setCopied] = useState<boolean>(false);
   return (
     <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
       <VStack align="center" space={4}>
@@ -54,13 +56,14 @@ const Integrations = () => {
             <VStack
               key={id}
               className={`cursor-pointer`}
-              onClick={() =>
+              onClick={() => {
                 setLanguage({
                   language: name,
                   framework: LANGUAGE_FRAMEWORKS[name][0],
                   text: FRAMEWORK_TO_TEXT_MAP[LANGUAGE_FRAMEWORKS[name][0]],
-                })
-              }
+                });
+                setCopied(false);
+              }}
               align="center"
               space={6}
             >
@@ -95,13 +98,14 @@ const Integrations = () => {
                   <HStack
                     key={e}
                     className="h-10 cursor-pointer rounded-md overflow-hidden px-2 items-center"
-                    onClick={() =>
+                    onClick={() => {
                       setLanguage((old) => ({
                         ...old,
                         framework: e,
                         text: FRAMEWORK_TO_TEXT_MAP[e],
-                      }))
-                    }
+                      }));
+                      setCopied(false);
+                    }}
                     style={
                       language.framework === e
                         ? {
@@ -122,13 +126,19 @@ const Integrations = () => {
               )}
             </HStack>
             <div
-              className="cursor-pointer h-6 w-6 mx-6 my-auto"
+              className={`${!copied && "cursor-pointer"} h-6 w-6 mx-6 my-auto`}
               style={{
-                color: "rgb(107 114 128)",
+                color: copied ? "green" : "rgb(107 114 128)",
               }}
-              onClick={() => navigator.clipboard.writeText(language.text)}
+              onClick={() => {
+                if (!copied) {
+                  setCopied(true);
+                  navigator.clipboard.writeText(language.text);
+                  setTimeout(() => setCopied(false), 5000);
+                }
+              }}
             >
-              {clipboard}
+              {copied ? checkCircle : clipboard}
             </div>
           </HStack>
           <hr
