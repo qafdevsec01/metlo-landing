@@ -4,6 +4,9 @@ import { useState } from "react";
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import typescript from "react-syntax-highlighter/dist/esm/languages/hljs/typescript";
 import python from "react-syntax-highlighter/dist/esm/languages/hljs/python";
+import go from "react-syntax-highlighter/dist/esm/languages/hljs/go";
+import java from "react-syntax-highlighter/dist/esm/languages/hljs/java";
+import plaintext from "react-syntax-highlighter/dist/esm/languages/hljs/plaintext";
 import bash from "react-syntax-highlighter/dist/esm/languages/hljs/bash";
 import yaml from "react-syntax-highlighter/dist/esm/languages/hljs/yaml";
 import vs2015 from "react-syntax-highlighter/dist/esm/styles/hljs/vs2015";
@@ -13,21 +16,27 @@ import {
   FRAMEWORK_TO_ICON_MAP,
   FRAMEWORK_TO_TEXT_MAP,
   Framework,
+  LANGUAGE_DOCS_LINK,
   LANGUAGE_FRAMEWORKS,
   LANGUAGE_TO_ICON_MAP,
   Language,
 } from "./constants";
 import clipboard from "./Icons/clipboard";
 import checkCircle from "./Icons/check-circle";
+import externalLink from "./Icons/external-link";
 
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("python", python);
 SyntaxHighlighter.registerLanguage("bash", bash);
 SyntaxHighlighter.registerLanguage("yaml", yaml);
+SyntaxHighlighter.registerLanguage("go", go);
+SyntaxHighlighter.registerLanguage("java", java);
+SyntaxHighlighter.registerLanguage("plaintext", plaintext);
 
 const showLineNumbers = (framework: Framework) => {
   switch (framework) {
     case Framework.aws:
+    case Framework.gcp:
       return false;
     default:
       return true;
@@ -39,6 +48,7 @@ const Integrations = () => {
     language: Language.node,
     framework: Framework.express,
     text: FRAMEWORK_TO_TEXT_MAP[Framework.express],
+    link: LANGUAGE_DOCS_LINK[Framework.express],
   });
   const [copied, setCopied] = useState<boolean>(false);
   return (
@@ -61,6 +71,7 @@ const Integrations = () => {
                   language: name,
                   framework: LANGUAGE_FRAMEWORKS[name][0],
                   text: FRAMEWORK_TO_TEXT_MAP[LANGUAGE_FRAMEWORKS[name][0]],
+                  link: LANGUAGE_DOCS_LINK[LANGUAGE_FRAMEWORKS[name][0]],
                 });
                 setCopied(false);
               }}
@@ -85,7 +96,7 @@ const Integrations = () => {
           ))}
         </HStack>
         <VStack
-          className="w-full rounded-md overflow-hidden"
+          className="w-full relative rounded-md overflow-hidden"
           style={{
             borderColor: "rgb(63, 63, 65)",
             borderWidth: "1px",
@@ -103,6 +114,7 @@ const Integrations = () => {
                         ...old,
                         framework: e,
                         text: FRAMEWORK_TO_TEXT_MAP[e],
+                        link: LANGUAGE_DOCS_LINK[e],
                       }));
                       setCopied(false);
                     }}
@@ -134,7 +146,7 @@ const Integrations = () => {
                 if (!copied) {
                   setCopied(true);
                   navigator.clipboard.writeText(language.text);
-                  setTimeout(() => setCopied(false), 5000);
+                  setTimeout(() => setCopied(false), 3500);
                 }
               }}
             >
@@ -153,6 +165,13 @@ const Integrations = () => {
           >
             {language.text}
           </SyntaxHighlighter>
+          <a
+            className="absolute bottom-4 right-4"
+            target="_blank"
+            href={`https://docs.metlo.com/connections/${language.link}`}
+          >
+            {externalLink}
+          </a>
         </VStack>
       </VStack>
     </div>
