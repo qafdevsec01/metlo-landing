@@ -3,11 +3,11 @@ import PythonLogo from "./IntegrationLogos/python";
 import AwsLogo from "./IntegrationLogos/aws";
 import DockerLogo from "./IntegrationLogos/docker";
 import KubernetesLogo from "./IntegrationLogos/kubernetes";
-import ExpressLogo from "./IntegrationLogos/express"
-import KoaLogo from "./IntegrationLogos/koa"
-import FastifyLogo from "./IntegrationLogos/fastify"
-import FlaskLogo from "./IntegrationLogos/flask"
-import DjangoLogo from "./IntegrationLogos/django"
+import ExpressLogo from "./IntegrationLogos/express";
+import KoaLogo from "./IntegrationLogos/koa";
+import FastifyLogo from "./IntegrationLogos/fastify";
+import FlaskLogo from "./IntegrationLogos/flask";
+import DjangoLogo from "./IntegrationLogos/django";
 
 export enum Language {
   node = "Node",
@@ -109,8 +109,7 @@ fastify.register(
 from metlo.flask import MetloFlask
 
 app = Flask(__name__)
-MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")
-`,
+MetloFlask(app, "http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>")`,
   [Framework.django]: `MIDDLEWARE = [
   ...,
   "metlo.django.MetloDjango",
