@@ -1,8 +1,7 @@
 export default (
   <svg
     fill="#ffffff"
-    width="w-full"
-    height="h-full"
+    className="h-full w-full"
     viewBox="0 0 512 512"
     enable-background="new 0 0 512 512"
     xmlSpace="preserve"

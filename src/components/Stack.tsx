@@ -95,7 +95,7 @@ const BaseStack: React.FC<StackProps & { dir: "vertical" | "horizontal" }> = ({
     className={[
       props.className || "",
       dir === "vertical" ? "flex flex-col" : "flex",
-      dir === "vertical" ? vSpaces[space ?? 0] : hSpaces[space ?? 0],
+      space ? (dir === "vertical" ? vSpaces[space ?? 0] : hSpaces[space ?? 0]) : "",
       justify != null ? justifyValues[justify] : "",
       align != null ? alignValues[align] : "",
     ].join(" ")}

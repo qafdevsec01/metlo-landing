@@ -161,3 +161,16 @@ body {
 .language-grid-icon:hover {
   background-color: #e7e7e70f;
 }
+
+.transform-transition {
+  transition: transform 1s ease;
+}
+
+.attacklistitem {
+  opacity: 0;
+}
+
+.attacklistadding {
+  transition: opacity 1s ease;
+  opacity: 1;
+}

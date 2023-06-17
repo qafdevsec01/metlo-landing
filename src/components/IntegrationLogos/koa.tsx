@@ -1,7 +1,6 @@
 export default (
   <svg
-    width="w-full"
-    height="h-full"
+    className="h-full w-full"
     viewBox="0 -118.5 512 512"
     version="1.1"
     preserveAspectRatio="xMidYMid"

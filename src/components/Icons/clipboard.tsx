@@ -4,8 +4,7 @@ export default (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    width="w-full"
-    height="h-full"
+    className="h-full w-full"
   >
     <path
       strokeLinecap="round"
