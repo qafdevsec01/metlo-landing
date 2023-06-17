@@ -4,9 +4,10 @@ import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
 import Metrics from "@/components/Metrics";
 import NavBar from "@/components/NavBar";
-import Protection from "@/components/Protection";
+import Protection from "@/components/BlockAnimation";
 import ProtectionDetailed from "@/components/ProtectionDetailed";
 import { VStack } from "@/components/Stack";
+import BottomCTA from "@/components/BottomCTA";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Discovery />
         <Integrations />
         <Metrics />
+        <BottomCTA />
         <Footer />
       </VStack>
     </div>

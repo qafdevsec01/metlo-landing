@@ -2,8 +2,8 @@
 import { v4 as uuidv4 } from "uuid";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import globe from "./Icons/globe";
-import server from "./Icons/server";
+import globe from "../Icons/globe";
+import server from "../Icons/server";
 
 interface Arrow {
   uuid: string;

@@ -1,6 +1,6 @@
-import Button from "./Button";
+import Button from "../Button";
 import Globe from "./Globe";
-import { HStack, VStack } from "./Stack";
+import { HStack, VStack } from "../Stack";
 
 const metricNameStyle = "text-sm text-gray-400";
 const metricValueStyle = "text-3xl text-metloblue";
@@ -8,8 +8,8 @@ const metricValueStyle = "text-3xl text-metloblue";
 const Metrics = () => {
   return (
     <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
-      <HStack
-        className="w-full rounded-md overflow-hidden"
+      <div
+        className="w-full rounded-md overflow-hidden flex flex-col w-full space-x-0 space-y-4 lg:space-y-0 lg:space-x-10 lg:flex-row"
         style={{
           backgroundColor: "rgb(16, 17, 19)",
           borderColor: "rgb(63, 63, 65)",
@@ -47,7 +47,7 @@ const Metrics = () => {
         <div style={{ height: "450px", width: "900px" }}>
           <Globe />
         </div>
-      </HStack>
+      </div>
     </div>
   );
 };
