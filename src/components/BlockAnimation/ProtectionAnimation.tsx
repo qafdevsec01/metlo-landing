@@ -69,6 +69,7 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
         style={{
           backgroundColor: "rgb(20, 21, 22, 0.95)",
           backdropFilter: "blur(2px)",
+          width: "15%",
         }}
       >
         <div className="flex items-center justify-center h-full">
@@ -108,6 +109,7 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
         style={{
           backgroundColor: "rgb(20, 21, 22, 0.95)",
           backdropFilter: "blur(2px)",
+          width: "15%",
         }}
       >
         <div className="flex items-center justify-center h-full">
