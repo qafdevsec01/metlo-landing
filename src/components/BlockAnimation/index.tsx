@@ -1,20 +1,58 @@
+"use client";
+
 import Button from "../Button";
 import ProtectionAnimation from "./ProtectionAnimation";
 import { VStack } from "../Stack";
+import { useEffect, useState } from "react";
 
 const Protection = () => {
+  const [gridSpacing, setGridSpacing] = useState(50);
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth;
+      if (width < 500) {
+        setGridSpacing(20);
+      } else if (width < 800) {
+        setGridSpacing(30);
+      } else if (width < 1024) {
+        setGridSpacing(40);
+      } else {
+        setGridSpacing(50);
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div
-      className="max-w-6xl w-full mx-auto relative overflow-hidden"
-      style={{ minHeight: "500px" }}
-    >
-      <div className="absolute left-0 top-0 h-[1px] bg-griddark w-full"></div>
-      <div className="absolute left-0 top-[50px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute left-0 top-[100px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute left-0 top-[150px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute left-0 top-[200px] h-[1px] bg-griddark w-full"></div>
-      <div className="absolute left-0 top-[250px] h-[1px] bg-griddark w-full"></div>
-      <ProtectionAnimation />
+    <div className="max-w-6xl w-full mx-auto relative overflow-hidden">
+      <div
+        style={{ top: `${0 * gridSpacing}px` }}
+        className="absolute left-0 h-[1px] bg-griddark w-full"
+      ></div>
+      <div
+        style={{ top: `${1 * gridSpacing}px` }}
+        className="absolute left-0 h-[1px] bg-griddark w-full"
+      ></div>
+      <div
+        style={{ top: `${2 * gridSpacing}px` }}
+        className="absolute left-0 h-[1px] bg-griddark w-full"
+      ></div>
+      <div
+        style={{ top: `${3 * gridSpacing}px` }}
+        className="absolute left-0 h-[1px] bg-griddark w-full"
+      ></div>
+      <div
+        style={{ top: `${4 * gridSpacing}px` }}
+        className="absolute left-0 h-[1px] bg-griddark w-full"
+      ></div>
+      <div
+        style={{ top: `${5 * gridSpacing}px` }}
+        className="absolute left-0 h-[1px] bg-griddark w-full"
+      ></div>
+      <ProtectionAnimation gridSpacing={gridSpacing} />
       <div className="mt-[25px] w-full">
         <VStack align="center" className="w-full">
           <p className="pb-4 text-metloblue">Protection</p>

@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
 import Metrics from "@/components/Metrics";
 import NavBar from "@/components/NavBar";
-import Protection from "@/components/BlockAnimation";
+import BlockAnimation from "@/components/BlockAnimation";
 import ProtectionDetailed from "@/components/ProtectionDetailed";
 import { VStack } from "@/components/Stack";
 import BottomCTA from "@/components/BottomCTA";
@@ -15,8 +15,8 @@ export default function Home() {
       <NavBar />
       <VStack className="w-full" space={32}>
         <Hero />
-        <Protection />
         <ProtectionDetailed />
+        <BlockAnimation />
         <Discovery />
         <Integrations />
         <Metrics />
