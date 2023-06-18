@@ -35,7 +35,7 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
           node: (
             <div
               key={uuid}
-              style={{top: `${top}px`}}
+              style={{ top: `${top}px` }}
               className={`w-full ${animation} absolute z-10 left-0`}
             >
               <div
@@ -60,7 +60,7 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
 
   return (
     <div
-      style={{ height: `${gridSpacing*5}px` }}
+      style={{ height: `${gridSpacing * 5}px` }}
       className="w-full relative overflow-hidden"
     >
       <div className="w-full">{children.map((e) => e.node)}</div>
@@ -74,7 +74,7 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
       >
         <div className="flex items-center justify-center h-full">
           <div
-            className="h-1/2 w-1/2 mx-6 my-auto"
+            className="h-1/2 w-1/2 my-auto"
             style={{
               color: "rgb(38, 38, 38)",
             }}
@@ -99,7 +99,13 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
             backdropFilter: "blur(2px)",
           }}
         >
-          <Image src="/logo.svg" alt="Metlo" width={gridSpacing} height={gridSpacing} priority />
+          <Image
+            src="/logo.svg"
+            alt="Metlo"
+            width={gridSpacing}
+            height={gridSpacing}
+            priority
+          />
         </div>
       </div>
       <div
@@ -114,7 +120,7 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
       >
         <div className="flex items-center justify-center h-full">
           <div
-            className="h-1/2 w-1/2 mx-6 my-auto"
+            className="h-1/2 w-1/2 my-auto"
             style={{
               color: "rgb(38, 38, 38)",
             }}
