@@ -6,8 +6,8 @@ const Hero = () => {
   return (
     <div className="w-full items-center justify-center flex flex-col">
       <div className="relative max-w-6xl w-full px-6 pt-16">
-        <VStack className="relative w-2/3 z-20">
-          <p className="text-8xl mb-6 mt-6 text-white font-normal">
+        <VStack className="relative w-full max-w-2xl z-20">
+          <p className="text-5xl md:text-7xl lg:text-8xl mb-6 mt-6 text-white font-normal">
             Next Gen API Security
           </p>
           <p className="mt-1 text-lg mb-10 text-white text-gray-200 max-w-2xl font-light">
@@ -23,7 +23,7 @@ const Hero = () => {
             </Button>
           </div>
         </VStack>
-        <div className="absolute top-[-75px] right-0 z-10">
+        <div className="hidden md:block absolute top-[-75px] right-0 z-10">
           <HeroFilterAnimation />
         </div>
       </div>
