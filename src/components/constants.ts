@@ -4,8 +4,7 @@ import GoLogo from "./IntegrationLogos/go";
 import GinLogo from "./IntegrationLogos/gin";
 import GorillaLogo from "./IntegrationLogos/gorilla";
 import JavaLogo from "./IntegrationLogos/java";
-import MavenLogo from "./IntegrationLogos/maven";
-import GradleLgogo from "./IntegrationLogos/gradle";
+import SpringBootLogo from "./IntegrationLogos/spring-boot";
 import NginxLogo from "./IntegrationLogos/nginx";
 import AwsLogo from "./IntegrationLogos/aws";
 import FargateLogo from "./IntegrationLogos/fargate";
@@ -46,8 +45,7 @@ export enum Framework {
   gorilla = "Gorilla",
 
   // Java
-  maven = "Maven",
-  gradle = "Gradle",
+  springboot = "Spring Boot",
 
   // Nginx
   nginx = "Nginx",
@@ -72,7 +70,7 @@ export const LANGUAGE_FRAMEWORKS: Record<Language, Framework[]> = {
   [Language.node]: [Framework.express, Framework.koa, Framework.fastify],
   [Language.python]: [Framework.flask, Framework.django],
   [Language.go]: [Framework.gin, Framework.gorilla],
-  [Language.java]: [Framework.maven, Framework.gradle],
+  [Language.java]: [Framework.springboot],
   [Language.nginx]: [Framework.nginx],
   [Language.aws]: [Framework.aws, Framework.fargate],
   [Language.gcp]: [Framework.gcp],
@@ -104,8 +102,7 @@ export const FRAMEWORK_TO_ICON_MAP: Record<Framework, any> = {
   [Framework.django]: DjangoLogo,
   [Framework.gin]: GinLogo,
   [Framework.gorilla]: GorillaLogo,
-  [Framework.maven]: MavenLogo,
-  [Framework.gradle]: GradleLgogo,
+  [Framework.springboot]: SpringBootLogo,
   [Framework.nginx]: NginxLogo,
   [Framework.aws]: AwsLogo,
   [Framework.fargate]: FargateLogo,
@@ -124,8 +121,7 @@ export const FRAMEWORK_TO_HIGHLIGHT_LANGUAGE_MAP: Record<Framework, string> = {
   [Framework.django]: "python",
   [Framework.gin]: "go",
   [Framework.gorilla]: "go",
-  [Framework.maven]: "java",
-  [Framework.gradle]: "java",
+  [Framework.springboot]: "java",
   [Framework.nginx]: "plaintext",
   [Framework.aws]: "bash",
   [Framework.fargate]: "json",
@@ -218,28 +214,7 @@ func main() {
     r.Use(instrumentation.Middleware)
     ...
 }`,
-  [Framework.maven]: `package com.example.demo;
-
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-// Metlo imported here import com.metlo.spring.Metlo;
-
-@Configuration public class FilterConfig {
-
-    @Bean
-    public FilterRegistrationBean<Metlo> loggingFilter() {
-        FilterRegistrationBean<Metlo> registrationBean = new FilterRegistrationBean<>();
-
-        // Metlo registered as a filter here
-        registrationBean.setFilter(new Metlo("http://<YOUR_METLO_HOST>:8081", "<YOUR_METLO_API_KEY>"));
-        registrationBean.setOrder(2);
-        return registrationBean;
-    }
-
-}`,
-  [Framework.gradle]: `package com.example.demo;
+  [Framework.springboot]: `package com.example.demo;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -402,8 +377,7 @@ export const LANGUAGE_DOCS_LINK: Record<Framework, string> = {
   [Framework.django]: "python",
   [Framework.gin]: "go",
   [Framework.gorilla]: "go",
-  [Framework.maven]: "java",
-  [Framework.gradle]: "java",
+  [Framework.springboot]: "java",
   [Framework.nginx]: "nginx",
   [Framework.aws]: "aws",
   [Framework.fargate]: "aws-fargate",
