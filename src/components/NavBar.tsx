@@ -9,7 +9,8 @@ const NavLinks: React.FC = () => {
       {[
         ["Docs", "https://docs.metlo.com"],
         ["Blog", "https://blog.metlo.com"],
-        ["Pricing", "#features"],
+        ["Pricing", "https://docs.metlo.com/pricing"],
+        ["Testing", "https://docs.metlo.com/testing"],
       ].map(([label, href]) => (
         <Link
           key={label}
@@ -33,27 +34,27 @@ const NavBar = () => {
       }}
     >
       <nav>
-        <Container className="relative z-50 flex justify-between py-4">
-          <div className="relative z-10 flex items-center gap-8">
+        <Container className="relative max-w-6xl z-50 flex justify-between py-4">
+          <div className="relative z-10 flex items-center gap-4">
             <Link href="/" aria-label="Home">
               <div className="flex gap-2">
                 <Image
                   src="/logo.svg"
                   alt="Metlo"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   priority
                 />
                 <Image
                   src="/wordmark.svg"
                   alt="Metlo"
-                  width={80}
-                  height={20}
+                  width={60}
+                  height={15}
                   priority
                 />
               </div>
             </Link>
-            <div className="hidden lg:flex gap-4">
+            <div className="hidden lg:flex gap-2">
               <NavLinks />
             </div>
           </div>

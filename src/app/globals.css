@@ -174,3 +174,33 @@ body {
   transition: opacity 1s ease;
   opacity: 1;
 }
+
+.linear-spotlight-horizontal {
+  background: linear-gradient(90deg, rgba(14, 15, 17,1) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(14, 15, 17,1) 100%);
+}
+
+.greenglow {
+  animation: greenglow 2s infinite alternate;
+}
+
+@keyframes greenglow {
+  from {
+    box-shadow: 0px 0px 10px 2px green;
+  }
+  to {
+    box-shadow: 0px 0px 20px 5px green;
+  }
+}
+
+.redglow {
+  animation: redglow 2s infinite alternate;
+}
+
+@keyframes redglow {
+  from {
+    box-shadow: 0px 0px 10px 2px red;
+  }
+  to {
+    box-shadow: 0px 0px 20px 5px red;
+  }
+}
