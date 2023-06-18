@@ -24,6 +24,7 @@ import {
 import clipboard from "./Icons/clipboard";
 import checkCircle from "./Icons/check-circle";
 import externalLink from "./Icons/external-link";
+import Button from "./Button";
 
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("python", python);
@@ -169,13 +170,17 @@ const Integrations = () => {
           >
             {language.text}
           </SyntaxHighlighter>
-          <a
-            className="absolute bottom-4 right-4 h-8 w-8"
+          <Button
+            variant="gradient"
+            className="absolute bottom-6 right-6"
             target="_blank"
             href={`https://docs.metlo.com/connections/${language.link}`}
           >
-            {externalLink}
-          </a>
+            <HStack space={2} className="items-center">
+              <div className="h-6 w-6">{externalLink}</div>
+              <p>View Docs</p>
+            </HStack>
+          </Button>
         </VStack>
       </VStack>
     </div>
