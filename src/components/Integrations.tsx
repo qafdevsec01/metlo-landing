@@ -135,7 +135,7 @@ const Integrations = () => {
                     }
                     space={2}
                   >
-                    <div className="h-6">{FRAMEWORK_TO_ICON_MAP[e]}</div>
+                    <div className="h-6 w-6">{FRAMEWORK_TO_ICON_MAP[e]}</div>
                     <p className="text-gray-500 text-sm m-auto">{e}</p>
                   </HStack>
                 )
@@ -170,7 +170,7 @@ const Integrations = () => {
             {language.text}
           </SyntaxHighlighter>
           <a
-            className="absolute bottom-4 right-4"
+            className="absolute bottom-4 right-4 h-8 w-8"
             target="_blank"
             href={`https://docs.metlo.com/connections/${language.link}`}
           >
