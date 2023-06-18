@@ -156,7 +156,7 @@ const randomUserList: { name: string; location: string }[] = [
   { name: "xmitchell@hotmail.com", location: "us" },
   { name: "advaybhath@yahoo.in", location: "in" },
   { name: "annehull@gmail.com", location: "us" },
-  { name: "divya.tara", location: "in" },
+  { name: "divya.tara@yahoo.in", location: "in" },
   { name: "ouchiminori111@gmail.com", location: "jp" },
   { name: "nguyengregory@yahoo.com", location: "gb" },
   { name: "jamie17@hotmail.com", location: "de" },
