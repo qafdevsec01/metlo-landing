@@ -2,9 +2,13 @@ import NodeLogo from "./IntegrationLogos/node";
 import PythonLogo from "./IntegrationLogos/python";
 import GoLogo from "./IntegrationLogos/go";
 import GinLogo from "./IntegrationLogos/gin";
+import GorillaLogo from "./IntegrationLogos/gorilla";
 import JavaLogo from "./IntegrationLogos/java";
+import MavenLogo from "./IntegrationLogos/maven";
+import GradleLgogo from "./IntegrationLogos/gradle";
 import NginxLogo from "./IntegrationLogos/nginx";
 import AwsLogo from "./IntegrationLogos/aws";
+import FargateLogo from "./IntegrationLogos/fargate";
 import GcpLogo from "./IntegrationLogos/gcp";
 import DockerLogo from "./IntegrationLogos/docker";
 import KubernetesLogo from "./IntegrationLogos/kubernetes";
@@ -99,12 +103,12 @@ export const FRAMEWORK_TO_ICON_MAP: Record<Framework, any> = {
   [Framework.flask]: FlaskLogo,
   [Framework.django]: DjangoLogo,
   [Framework.gin]: GinLogo,
-  [Framework.gorilla]: GoLogo,
-  [Framework.maven]: JavaLogo,
-  [Framework.gradle]: JavaLogo,
+  [Framework.gorilla]: GorillaLogo,
+  [Framework.maven]: MavenLogo,
+  [Framework.gradle]: GradleLgogo,
   [Framework.nginx]: NginxLogo,
   [Framework.aws]: AwsLogo,
-  [Framework.fargate]: AwsLogo,
+  [Framework.fargate]: FargateLogo,
   [Framework.gcp]: GcpLogo,
   [Framework.docker]: DockerLogo,
   [Framework.daemonset]: KubernetesLogo,
