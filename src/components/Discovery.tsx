@@ -15,7 +15,7 @@ const DiscoveryFeature = () => (
 const Discovery = () => {
   return (
     <div className="max-w-6xl w-full mx-auto px-6 relative overflow-hidden">
-      <VStack align="center" space={4}>
+      <VStack align="center" space={2}>
         <p className="text-metloblue">Discovery</p>
         <p className="text-4xl text-gray-200 text-center">
           Create an Inventory of your Endpoints

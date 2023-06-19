@@ -1,6 +1,9 @@
 import Button from "./Button";
 import HeroFilterAnimation from "./HeroFilterAnimation";
-import { VStack } from "./Stack";
+import ArrowRight from "./Icons/chevron-right";
+import { HStack, VStack } from "./Stack";
+
+const descTagClass = `bg-metloblue rounded-full px-2 py-0.5 font-normal mx-1`;
 
 const Hero = () => {
   return (
@@ -8,18 +11,41 @@ const Hero = () => {
       <div className="relative max-w-6xl w-full px-6 pt-16">
         <VStack className="relative w-full max-w-2xl z-20">
           <p className="text-5xl md:text-7xl lg:text-8xl mb-6 mt-6 text-white font-normal">
-            Next Gen API Security
+            Effortless API Security
           </p>
-          <p className="mt-1 text-lg mb-10 text-white text-gray-200 max-w-2xl font-light">
-            Metlo is an Open Source First API Security Tool that Protects your
-            API. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <p className="mt-1 text-lg mb-10 text-white text-gray-200 max-w-2xl font-light leading-8">
+            Open Source API security tool you can
+            <span className={descTagClass}>
+              <a href="#setup">{`setup in < 15 minutes`}</a>
+            </span>{" "}
+            that inventories your endpoints,{" "}
+            <span className={descTagClass}>
+              <a href="#protection">detects bad actors</a>
+            </span>{" "}
+            and
+            <span className={descTagClass}>
+              <a href="#block">blocks malicious traffic</a>
+            </span>
+            in real time.
           </p>
           <div className="flex items-center gap-6 mb-32">
-            <Button href="/login" variant="solid">
-              {`Try Metlo for Free >`}
+            <Button href="https://app.metlo.com/signup" variant="solid">
+              <HStack align="center">
+                <p>Try Metlo for Free</p>
+                <p className="w-5 h-5">{ArrowRight}</p>
+              </HStack>
             </Button>
-            <Button href="#" variant="link">
-              {`Schedule a Demo >`}
+            <Button variant="link">
+              <a
+                target="_blank"
+                href="https://calendly.com/metloshri/metlo-demo"
+                rel="noopener noreferrer"
+              >
+                <HStack align="center">
+                  <p>Schedule a Demo</p>
+                  <p className="w-5 h-5">{ArrowRight}</p>
+                </HStack>
+              </a>
             </Button>
           </div>
         </VStack>

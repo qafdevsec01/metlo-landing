@@ -2,8 +2,9 @@
 
 import Button from "../Button";
 import ProtectionAnimation from "./ProtectionAnimation";
-import { VStack } from "../Stack";
+import { HStack, VStack } from "../Stack";
 import { useEffect, useState } from "react";
+import chevronRight from "../Icons/chevron-right";
 
 const Protection = () => {
   const [gridSpacing, setGridSpacing] = useState(50);
@@ -27,7 +28,10 @@ const Protection = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl w-full mx-auto relative overflow-hidden">
+    <div
+      id="block"
+      className="max-w-6xl w-full mx-auto relative overflow-hidden"
+    >
       <div
         style={{ top: `${0 * gridSpacing}px` }}
         className="absolute left-0 h-[1px] bg-griddark w-full"
@@ -55,14 +59,21 @@ const Protection = () => {
       <ProtectionAnimation gridSpacing={gridSpacing} />
       <div className="mt-[25px] w-full">
         <VStack align="center" className="w-full">
-          <p className="pb-4 text-metloblue">Protection</p>
-          <p className="pb-6 text-4xl text-gray-200">Realtime API Protection</p>
-          <p className="pb-4 text-gray-400 max-w-xl w-full text-center">
+          <p className="pb-2 text-metloblue">Protection</p>
+          <p className="pb-2 text-4xl text-gray-200">
+            Block Malicious Requests
+          </p>
+          <p className="pb-6 text-gray-400 max-w-xl w-full text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
             velit id tortor cursus mattis. Integer in nibh faucibus, efficitur
             sem a, scelerisque felis. Mauris auctor vitae nulla nec scelerisque.
           </p>
-          <Button className="w-32">{`Learn More >`}</Button>
+          <Button className="w-32">
+            <HStack align="center">
+              <p>Learn More</p>
+              <p className="w-5 h-5">{chevronRight}</p>
+            </HStack>
+          </Button>
         </VStack>
       </div>
     </div>

@@ -53,8 +53,8 @@ const Integrations = () => {
   });
   const [copied, setCopied] = useState<boolean>(false);
   return (
-    <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
-      <VStack align="center" space={4}>
+    <div id="setup" className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
+      <VStack align="center" space={2}>
         <p className="text-metloblue">Quick Setup</p>
         <p className="text-4xl text-gray-200 text-center">
           Deploy Metlo in Less Than 15 Minutes
