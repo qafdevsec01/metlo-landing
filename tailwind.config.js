@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
@@ -18,9 +18,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        metloblue: "rgb(76, 131, 237)",
+        metloblue: "rgb(66, 89, 231)",
         metloblueGradientEnd: "rgb(13, 101, 151)",
-        metloblueHover: "rgb(76, 131, 237, 0.7)",
+        metlobluehover: "rgb(39, 64, 227)",
         dark: "rgb(16, 17, 19)",
         secondarydark: "rgb(63, 63, 65)",
         griddark: "rgb(31, 33, 35)",

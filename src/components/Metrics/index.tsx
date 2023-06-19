@@ -1,6 +1,7 @@
 import Button from "../Button";
 import Globe from "./Globe";
 import { HStack, VStack } from "../Stack";
+import chevronRight from "../Icons/chevron-right";
 
 const metricNameStyle = "text-sm text-gray-400";
 const metricValueStyle = "text-3xl text-metloblue";
@@ -17,9 +18,9 @@ const Metrics = () => {
         }}
       >
         <VStack className="p-8 w-full">
-          <p className="pb-4 text-metloblue">Protection at Scale</p>
+          <p className="pb-2 text-metloblue">Protection at Scale</p>
           <p className="pb-6 text-4xl text-gray-200 font-light">
-            Architected for Speed and Reliability
+            Built for Performance and Reliability
           </p>
           <HStack align="center" className="pb-4">
             <VStack className="p-4">
@@ -34,15 +35,21 @@ const Metrics = () => {
             <div className="h-full border border-gray-800"></div>
             <VStack className="p-4">
               <p className={metricValueStyle}>{`<0.2ms`}</p>
-              <p className={metricNameStyle}>Latency</p>
+              <p className={metricNameStyle}>Latency Increase</p>
             </VStack>
           </HStack>
           <p className="pb-6 text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-            velit id tortor cursus mattis. Integer in nibh faucibus, efficitur
-            sem a, scelerisque felis. Mauris auctor vitae nulla nec scelerisque.
+            Metlo has been tested for performance at scale. Our agents have
+            processed 100s of billions of API requests protecting 100s of
+            thousands of endpoints. Each agent uses a maximum of 1% CPU, 50MB of
+            memory and adds at most of 200 microseconds of latency.
           </p>
-          <Button className="w-32">{`Learn More >`}</Button>
+          <Button href="https://docs.metlo.com/performance" variant="solid" className="w-32">
+            <HStack align="center">
+              <p>Learn More</p>
+              <p className="w-5 h-5">{chevronRight}</p>
+            </HStack>
+          </Button>
         </VStack>
         <div style={{ height: "450px", width: "900px" }}>
           <Globe />
