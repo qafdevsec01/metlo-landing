@@ -62,9 +62,9 @@ const Protection = () => {
           <p className="pb-2 text-metloblue">Protection</p>
           <p className="pb-2 text-4xl text-gray-200">Block Attack Requests</p>
           <p className="pb-6 text-gray-400 max-w-xl w-full text-center">
-            Metlo's cloud detection engine identifies bad actors and builds a
+            {`Metlo's cloud detection engine identifies bad actors and builds a
             model of how your API works. Each agent pulls this metadata from the
-            cloud to block malicious requests in real time.
+            cloud to block malicious requests in real time.`}
           </p>
           <Button className="w-32" href="https://docs.metlo.com/protection">
             <HStack align="center">
