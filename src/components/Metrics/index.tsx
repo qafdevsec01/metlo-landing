@@ -42,9 +42,13 @@ const Metrics = () => {
             Metlo has been tested for performance at scale. Our agents have
             processed 100s of billions of API requests protecting 100s of
             thousands of endpoints. Each agent uses a maximum of 1% CPU, 50MB of
-            memory and adds at most of 200 microseconds of latency.
+            memory and adds at most 200 microseconds of latency.
           </p>
-          <Button href="https://docs.metlo.com/performance" variant="solid" className="w-32">
+          <Button
+            href="https://docs.metlo.com/performance"
+            variant="solid"
+            className="w-32"
+          >
             <HStack align="center">
               <p>Learn More</p>
               <p className="w-5 h-5">{chevronRight}</p>
