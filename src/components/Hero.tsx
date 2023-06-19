@@ -3,7 +3,7 @@ import HeroFilterAnimation from "./HeroFilterAnimation";
 import ArrowRight from "./Icons/chevron-right";
 import { HStack, VStack } from "./Stack";
 
-const descTagClass = `bg-metloblue rounded-full px-2 py-0.5 font-normal mx-1`;
+const descTagClass = `bg-metloblue rounded-full px-2 py-0.5 font-normal whitespace-nowrap	 mx-1`;
 
 const Hero = () => {
   return (
@@ -59,7 +59,7 @@ const Hero = () => {
           className="rounded-md overflow-hidden"
         >
           <iframe
-            src="https://www.loom.com/embed/fec7b1bb001a42ddb3012c1c8f6c3b21"
+            src="https://www.loom.com/embed/a35ee39f2d474feabeda62cc078e3660"
             allowFullScreen
             style={{
               position: "absolute",

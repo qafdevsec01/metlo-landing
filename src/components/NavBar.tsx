@@ -15,7 +15,7 @@ const NavLinks: React.FC = () => {
         <Link
           key={label}
           href={href}
-          className="relative rounded-md px-3 py-2 text-sm text-gray-200 transition-colors delay-150 hover:bg-gray-800 hover:delay-[0ms]"
+          className="relative rounded-md px-3 py-2 text-sm text-gray-200 transition-colors delay-150 hover:bg-gray-900 hover:delay-[0ms]"
         >
           <span className="relative z-10">{label}</span>
         </Link>
@@ -59,10 +59,10 @@ const NavBar = () => {
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <Button href="/login" variant="link">
+            <Button href="https://app.metlo.com/login" variant="link">
               Log in
             </Button>
-            <Button href="#" variant="gradient">
+            <Button href="https://app.metlo.com/signup" variant="gradient">
               Sign Up
             </Button>
           </div>

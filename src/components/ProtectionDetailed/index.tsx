@@ -17,7 +17,7 @@ const ProtectionDetailed = () => {
             <p className="pb-2 text-4xl text-gray-200">Detect API Attacks</p>
             <p className="pb-4 text-gray-400">
               Metlo passively listens to your API traffic and tags every
-              malicous request. Metlo runs models built on patterns of malicous
+              malicous request. Our models are built on patterns of malicous
               requests to detect bad actors and API attacks.
             </p>
             <ProtectionDetailedFeatures />

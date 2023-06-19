@@ -60,8 +60,9 @@ const Integrations = () => {
           Deploy Metlo in Less Than 15 Minutes
         </p>
         <p className="text-gray-400 pb-6 max-w-2xl w-full text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-          velit id tortor cursus mattis. Integer in nibh faucibus.
+          {`Metlo seamlessly integrates with your app regardless of your stack. We
+          can integrate with any language (Node, Python, Golang, Java), Nginx,
+          Kubernetes or mirror traffic in your Cloud.`}
         </p>
         <HStack
           className="w-full justify-center items-center flex-wrap overflow-x-auto pb-4"

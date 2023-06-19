@@ -1,14 +1,27 @@
+import api from "./Icons/api";
+import cross from "./Icons/cross";
+import flowSwitch from "./Icons/flow-switch";
+import key from "./Icons/key";
+import lock from "./Icons/lock";
+import webhook from "./Icons/webhook";
 import { HStack, VStack } from "./Stack";
 import Image from "next/image";
 
-const DiscoveryFeature = () => (
-  <VStack space={2}>
-    <HStack>
-      <p className="text-gray-200 text-xl">Lorem ipsum dolor</p>
+const DiscoveryFeature = ({
+  icon,
+  title,
+  description,
+}: {
+  icon?: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
+  <VStack space={1}>
+    <HStack align="center" space={1}>
+      {icon ? <div className="h-5 w-5 text-gray-200">{icon}</div> : null}
+      <p className="text-gray-200 text-xl">{title}</p>
     </HStack>
-    <p className="text-gray-400">
-      Integer in nibh faucibus, efficitur sem a, scelerisque felis.
-    </p>
+    <p className="text-gray-400">{description}</p>
   </VStack>
 );
 
@@ -21,8 +34,8 @@ const Discovery = () => {
           Create an Inventory of your Endpoints
         </p>
         <p className="text-gray-400 max-w-2xl w-full text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis
-          velit id tortor cursus mattis. Integer in nibh faucibus.
+          Based on your API traffic, Metlo creates a complete inventory of all
+          your API Hosts, Endpoints and Sensitive Data.
         </p>
         <div className="flex w-full max-w-4xl mx-auto py-6">
           <Image
@@ -36,12 +49,36 @@ const Discovery = () => {
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <DiscoveryFeature />
-          <DiscoveryFeature />
-          <DiscoveryFeature />
-          <DiscoveryFeature />
-          <DiscoveryFeature />
-          <DiscoveryFeature />
+          <DiscoveryFeature
+            icon={flowSwitch}
+            title="Endpoints"
+            description="Categorize and list all the endpoints and datafields in your API"
+          />
+          <DiscoveryFeature
+            icon={lock}
+            title="Sensitive Data"
+            description="Automatically identify map all the sensitive data your API processes"
+          />
+          <DiscoveryFeature
+            icon={key}
+            title="Authentication"
+            description="Identify which endpoints are unauthenticated to find potential data leaks"
+          />
+          <DiscoveryFeature
+            icon={webhook}
+            title="Webhooks"
+            description="Get an alert everytime a new endpoint or datafield is identified"
+          />
+          <DiscoveryFeature
+            icon={api}
+            title="Open API Specs"
+            description="Autogenerate Open API Specs to complete your docs or use in other tools"
+          />
+          <DiscoveryFeature
+            icon={cross}
+            title="Data Redaction"
+            description="All of Metlo's discovery is done in our agent and only the metadata is sent to our cloud"
+          />
         </div>
       </VStack>
     </div>
