@@ -1,22 +1,31 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import chevronRight from "./Icons/chevron-right";
 import { HStack, VStack } from "./Stack";
 
 const BottomCTA = () => {
-  const hours = new Date().getHours();
-  let text = "";
-  if (hours < 12) {
-    text = "Morning";
-  } else if (hours < 18) {
-    text = "Afternoon";
-  } else {
-    text = "Evening";
-  }
+  const [tod, setTOD] = useState("");
+
+  useEffect(() => {
+    const hours = new Date().getHours();
+    let text = "";
+    if (hours < 12) {
+      text = "Morning";
+    } else if (hours < 18) {
+      text = "Afternoon";
+    } else {
+      text = "Evening";
+    }
+    setTOD(text);
+  }, [setTOD]);
+
   return (
     <div className="max-w-6xl w-full mx-auto px-6 relative overflow-hidden">
       <VStack align="start" space={12}>
         <p className="text-5xl text-gray-200">
-          Secure your API <span className="text-metloblue">this {text}</span>
+          Secure your API <span className="text-metloblue">this {tod}</span>
         </p>
         <div className="flex items-center gap-6 mb-32">
           <Button href="https://app.metlo.com/signup" variant="solid">
