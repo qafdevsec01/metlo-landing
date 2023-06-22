@@ -14,8 +14,8 @@ const ProtectionDetailed = () => {
         <p className="pb-2 text-metloblue">Protection</p>
         <div className="flex flex-col w-full space-x-0 space-y-10 lg:space-y-0 lg:space-x-10 lg:flex-row">
           <VStack className="flex-equal-2">
-            <p className="pb-2 text-4xl text-gray-200">Detect API Attacks</p>
-            <p className="pb-4 text-gray-400">
+            <p className="pb-2 text-4xl font-bold text-gray-200">Detect API Attacks</p>
+            <p className="pb-8 text-gray-400">
               Metlo passively listens to your API traffic and tags every
               malicous request. Our models are built on patterns of malicous
               requests to detect bad actors and API attacks.

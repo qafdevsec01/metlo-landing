@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <NavBar />
-      <VStack className="w-full" space={32}>
+      <VStack className="w-full" space={40}>
         <Hero />
         <ProtectionDetailed />
         <BlockAnimation />

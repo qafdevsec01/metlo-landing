@@ -84,7 +84,7 @@ const AttackToast = ({
   <div className="w-full p-4 rounded-lg shadow bg-gray-800 text-gray-400 mb-4">
     <VStack className="text-sm font-normal">
       <p
-        className={`mb-2 text-sm font-semibold ${
+        className={`mb-2 text-xs font-semibold uppercase ${
           notificationType == "block" ? "text-green-400" : "text-red-400"
         }`}
       >
@@ -254,6 +254,18 @@ const initAttackItems = [
       actorLocation: "gb",
       notificationType: "detect",
       attackTypes: ["High Sensitive Data Volume", "SQLI"],
+    },
+  },
+  {
+    uuid: "c331ab6c-7e3f-4ea9-8c07-1a0bdc44aca7",
+    adding: true,
+    nodeParams: {
+      title: "Blocked Malicious Actor",
+      actorType: "User",
+      actorName: "ouchiminori111@gmail.com",
+      actorLocation: "gb",
+      notificationType: "block",
+      attackTypes: ["High Sensitive Data Volume", "SQLI", "XSS"],
     },
   },
 ];
