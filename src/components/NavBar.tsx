@@ -3,16 +3,24 @@ import Button from "@/components/Button";
 import Container from "@/components/Container";
 import Image from "next/image";
 import { HStack } from "./Stack";
+import chevronDown from "./Icons/chevron-down";
+import chevronUp from "./Icons/chevron-up";
 
 const NavLinks: React.FC = () => {
   return (
     <>
       <div className="group relative">
-        <div className="relative cursor-pointer rounded-md px-3 py-2 text-sm text-gray-200 transition-colors delay-150 hover:bg-gray-900 hover:delay-[0ms]">
+        <button className="items-center inline-flex relative cursor-pointer rounded-md px-3 py-2 text-sm text-gray-200 transition-colors delay-150 hover:bg-gray-900 hover:delay-[0ms]">
           <span className="relative z-10">Docs</span>
-        </div>
+          <p className="w-3 h-3 ml-2 group-hover:hidden group-focus-within:!hidden">
+            {chevronDown}
+          </p>
+          <p className="hidden w-3 h-3 ml-2 group-hover:inline group-focus-within:!inline">
+            {chevronUp}
+          </p>
+        </button>
         <div
-          className="invisible opacity-0 rounded-md absolute z-50 flex flex-col p-4 text-gray-800 group-hover:visible group-hover:opacity-100"
+          className="invisible opacity-0 rounded-md absolute z-50 flex flex-col p-4 text-gray-800 group-hover:visible group-hover:opacity-100 group-focus-within:!visible group-focus-within:!opacity-100"
           style={{
             backgroundColor: "rgb(var(--foreground-rgb))",
             borderColor: "rgb(63, 63, 65)",
@@ -21,7 +29,7 @@ const NavLinks: React.FC = () => {
             transitionProperty: "opacity",
             transitionTimingFunction: "ease-in-out",
             transitionDuration: "250ms",
-            left: "-100%"
+            left: "-100%",
           }}
         >
           <HStack space={4} className="w-full h-full justify-between">
