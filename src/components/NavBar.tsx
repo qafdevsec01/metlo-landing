@@ -21,6 +21,7 @@ const NavLinks: React.FC = () => {
             transitionProperty: "opacity",
             transitionTimingFunction: "ease-in-out",
             transitionDuration: "250ms",
+            left: "-100%"
           }}
         >
           <HStack space={4} className="w-full h-full justify-between">
