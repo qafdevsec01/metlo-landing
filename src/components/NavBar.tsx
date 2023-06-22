@@ -2,12 +2,84 @@ import Link from "next/link";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
 import Image from "next/image";
+import { HStack } from "./Stack";
 
 const NavLinks: React.FC = () => {
   return (
     <>
+      <div className="group relative">
+        <div className="relative cursor-pointer rounded-md px-3 py-2 text-sm text-gray-200 transition-colors delay-150 hover:bg-gray-900 hover:delay-[0ms]">
+          <span className="relative z-10">Docs</span>
+        </div>
+        <div
+          className="invisible opacity-0 rounded-md absolute z-50 flex flex-col p-4 text-gray-800 group-hover:visible group-hover:opacity-100"
+          style={{
+            backgroundColor: "rgb(var(--foreground-rgb))",
+            borderColor: "rgb(63, 63, 65)",
+            borderWidth: "1px",
+            width: "700px",
+            transitionProperty: "opacity",
+            transitionTimingFunction: "ease-in-out",
+            transitionDuration: "250ms",
+          }}
+        >
+          <HStack space={4} className="w-full h-full justify-between">
+            <a
+              href="https://docs.metlo.com"
+              className="h-auto w-64 justify-center align-center bg-gray-900 text-gray-500 p-6"
+            >
+              <p className="font-semibold mb-4 text-lg">metlo-labs/metlo</p>
+              <p className="text-sm">
+                Effortless API Security to discover and protect your API.
+              </p>
+            </a>
+            <div className="w-full grid grid-cols-2 gap-4">
+              {[
+                [
+                  "Introduction",
+                  "Get started with Metlo in less than 15 minutes.",
+                  "https://docs.metlo.com/intro",
+                ],
+                [
+                  "Inventory",
+                  "View all your endpoints, hosts, and sensitive data.",
+                  "https://docs.metlo.com/inventory",
+                ],
+                [
+                  "Protection",
+                  "Detect and block any malicious requests and bad actors.",
+                  "https://docs.metlo.com/protection",
+                ],
+                [
+                  "Connections",
+                  "Integrate Metlo with your app using one of our many connectors.",
+                  "https://docs.metlo.com/connections",
+                ],
+                [
+                  "Testing",
+                  "Test and catch many different kinds of vulnerabilities with custom tests.",
+                  "https://docs.metlo.com/testing",
+                ],
+                [
+                  "Settings",
+                  "Configure Metlo to fit your security needs.",
+                  "https://docs.metlo.com/settings",
+                ],
+              ].map(([label, description, href]) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="text-gray-500 hover:text-white relative rounded-md p-4 transition-colors delay-150 hover:bg-gray-900 hover:delay-[0ms]"
+                >
+                  <p className="text-md mb-2 font-semibold">{label}</p>
+                  <p className="text-sm text-gray-500">{description}</p>
+                </Link>
+              ))}
+            </div>
+          </HStack>
+        </div>
+      </div>
       {[
-        ["Docs", "https://docs.metlo.com"],
         ["Blog", "https://blog.metlo.com"],
         ["Pricing", "https://docs.metlo.com/pricing"],
         ["Testing", "https://docs.metlo.com/testing"],
