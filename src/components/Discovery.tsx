@@ -38,12 +38,12 @@ const Discovery = () => {
         <div className="flex w-full max-w-4xl mx-auto py-6 relative">
           <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-6 rounded-lg">
             <Image
-              src="/endpoint_inventory.png"
+              src="/endpoint_inventory_dark.png"
               alt="Inventory"
               width={0}
               height={0}
               sizes="100vw"
-              style={{ width: "100%", height: "auto", filter: "invert(1)" }}
+              style={{ width: "100%", height: "auto" }}
               className="mx-auto rounded-md"
             />
           </div>
