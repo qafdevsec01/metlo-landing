@@ -45,7 +45,7 @@ const Metrics = () => {
             memory and adds at most 200 microseconds of latency.
           </p>
           <Button
-            href="https://docs.metlo.com/performance"
+            href="https://docs.metlo.com/intro/performance"
             variant="solid"
             className="w-32"
           >
