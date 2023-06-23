@@ -2,12 +2,11 @@ import Image from "next/image";
 
 const navigation = {
   product: [
-    { name: "Inventory", href: "#" },
-    { name: "Testing", href: "#" },
-    { name: "Protection", href: "#" },
+    { name: "Inventory", href: "https://docs.metlo.com/inventory" },
+    { name: "Testing", href: "https://docs.metlo.com/testing" },
+    { name: "Protection", href: "https://docs.metlo.com/protection" },
   ],
   support: [
-    { name: "Pricing", href: "https//docs.metlo.com/pricing" },
     { name: "Documentation", href: "https://docs.metlo.com" },
   ],
   company: [

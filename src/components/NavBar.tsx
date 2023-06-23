@@ -90,7 +90,6 @@ const NavLinks: React.FC = () => {
       </div>
       {[
         ["Blog", "https://blog.metlo.com"],
-        ["Pricing", "https://docs.metlo.com/pricing"],
         ["Testing", "https://docs.metlo.com/testing"],
       ].map(([label, href]) => (
         <Link
@@ -135,7 +134,7 @@ const NavBar = () => {
                 />
               </div>
             </Link>
-            <div className="hidden lg:flex gap-2">
+            <div className="hidden md:flex gap-2">
               <NavLinks />
             </div>
           </div>

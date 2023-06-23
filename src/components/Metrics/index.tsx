@@ -10,7 +10,7 @@ const Metrics = () => {
   return (
     <div className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
       <div
-        className="w-full rounded-md overflow-hidden flex flex-col w-full space-x-0 space-y-4 lg:space-y-0 lg:space-x-10 lg:flex-row"
+        className="w-full rounded-md overflow-hidden flex flex-col space-x-0 space-y-4 lg:space-y-0 lg:space-x-10 lg:flex-row"
         style={{
           backgroundColor: "rgb(16, 17, 19)",
           borderColor: "rgb(63, 63, 65)",
@@ -22,7 +22,7 @@ const Metrics = () => {
           <p className="pb-6 text-4xl text-gray-200 font-light">
             Built for Performance and Reliability
           </p>
-          <HStack align="center" className="pb-4">
+          <div className="pb-4 sm:inline-flex gap-4">
             <VStack className="p-4">
               <p className={metricValueStyle}>100B+</p>
               <p className={metricNameStyle}>API Calls Processed</p>
@@ -37,7 +37,7 @@ const Metrics = () => {
               <p className={metricValueStyle}>{`<0.2ms`}</p>
               <p className={metricNameStyle}>Latency Increase</p>
             </VStack>
-          </HStack>
+          </div>
           <p className="pb-6 text-gray-400">
             Metlo has been tested for performance at scale. Our agents have
             processed 100s of billions of API requests protecting 100s of
@@ -55,7 +55,7 @@ const Metrics = () => {
             </HStack>
           </Button>
         </VStack>
-        <div style={{ height: "450px", width: "900px" }}>
+        <div className="justify-self-center self-center h-[350px] w-[300px] lg:h-[450px] lg:w-[900px]">
           <Globe />
         </div>
       </div>

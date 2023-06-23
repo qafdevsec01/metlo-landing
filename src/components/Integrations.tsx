@@ -64,10 +64,7 @@ const Integrations = () => {
           can integrate with any language (Node, Python, Golang, Java), Nginx,
           Kubernetes or mirror traffic in your Cloud.`}
         </p>
-        <HStack
-          className="w-full justify-center items-center flex-wrap overflow-x-auto pb-4"
-          space={6}
-        >
+        <div className="w-full inline-flex justify-center items-center flex-wrap pb-4 gap-6">
           {Object.entries(Language).map(([id, name], idx, arr) => (
             <VStack
               key={id}
@@ -100,7 +97,7 @@ const Integrations = () => {
               </p>
             </VStack>
           ))}
-        </HStack>
+        </div>
         <VStack
           className="w-full relative rounded-md overflow-hidden"
           style={{
