@@ -7,7 +7,6 @@ const navigation = {
     { name: "Protection", href: "#" },
   ],
   support: [
-    { name: "Pricing", href: "https//docs.metlo.com/pricing" },
     { name: "Documentation", href: "https://docs.metlo.com" },
   ],
   company: [
