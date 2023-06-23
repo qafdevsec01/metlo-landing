@@ -134,7 +134,7 @@ const NavBar = () => {
                 />
               </div>
             </Link>
-            <div className="hidden lg:flex gap-2">
+            <div className="hidden md:flex gap-2">
               <NavLinks />
             </div>
           </div>
