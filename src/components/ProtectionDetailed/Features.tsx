@@ -25,7 +25,7 @@ const Feature = ({
 
 const ProtectionDetailedFeatures = () => {
   return (
-    <VStack className="pb-8" space={4}>
+    <VStack className="pb-8" space={6}>
       <Feature
         icon={check}
         title="Nearly No False Positives"

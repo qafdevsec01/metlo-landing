@@ -56,7 +56,7 @@ const Integrations = () => {
     <div id="setup" className="max-w-6xl w-full mx-auto px-6 overflow-hidden">
       <VStack align="center" space={2}>
         <p className="text-metloblue">Quick Setup</p>
-        <p className="text-4xl text-gray-200 text-center">
+        <p className="text-4xl text-gray-200 text-center font-bold">
           Deploy Metlo in Less Than 15 Minutes
         </p>
         <p className="text-gray-400 pb-6 max-w-2xl w-full text-center">
@@ -164,7 +164,7 @@ const Integrations = () => {
             style={{ height: "1px", border: "none" }}
           />
           <SyntaxHighlighter
-            className="h-[500px] !bg-transparent"
+            className="h-[500px] !bg-transparent text-sm"
             language={FRAMEWORK_TO_HIGHLIGHT_LANGUAGE_MAP[language.framework]}
             style={vs2015}
             showLineNumbers={showLineNumbers(language.framework)}

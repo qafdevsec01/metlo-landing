@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="w-full items-center justify-center flex flex-col">
       <div className="relative max-w-6xl w-full px-6 pt-16">
         <VStack className="relative w-full max-w-2xl z-20">
-          <p className="text-5xl md:text-7xl lg:text-8xl mb-6 mt-6 text-white font-normal">
+          <p className="text-5xl md:text-7xl lg:text-8xl mb-6 mt-6 text-white font-normal ">
             Effortless API Security
           </p>
           <p className="mt-1 text-lg mb-10 text-white text-gray-200 max-w-2xl font-light leading-8">
@@ -30,8 +30,8 @@ const Hero = () => {
           </p>
           <div className="flex items-center gap-6 mb-32">
             <Button href="https://app.metlo.com/signup" variant="solid">
-              <HStack align="center">
-                <p>Try Metlo for Free</p>
+              <HStack align="center" className="px-2.5">
+                <p className="text-lg">Try Metlo for Free</p>
                 <p className="w-5 h-5">{ArrowRight}</p>
               </HStack>
             </Button>
@@ -42,7 +42,7 @@ const Hero = () => {
                 rel="noopener noreferrer"
               >
                 <HStack align="center">
-                  <p>Schedule a Demo</p>
+                  <p className="text-lg">Schedule a Demo</p>
                   <p className="w-5 h-5">{ArrowRight}</p>
                 </HStack>
               </a>

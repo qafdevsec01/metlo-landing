@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const HeroFilterAnimation = () => {
-  const width = 600;
+  const width = 700;
   const height = 700;
   const spacing = 50;
   const numRows = height / spacing;
@@ -46,7 +46,7 @@ const HeroFilterAnimation = () => {
             backdropFilter: "blur(2px)",
           }}
         >
-          <Image src="/logo.svg" alt="Metlo" width={32} height={32} priority />
+          <Image src="/logo.svg" alt="Metlo" width={44} height={44} priority />
         </div>
       </div>
       <div

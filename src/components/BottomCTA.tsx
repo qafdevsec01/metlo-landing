@@ -29,8 +29,8 @@ const BottomCTA = () => {
         </p>
         <div className="flex items-center gap-6 mb-32">
           <Button href="https://app.metlo.com/signup" variant="solid">
-            <HStack align="center">
-              <p>Try Metlo for Free</p>
+            <HStack align="center" className="px-2.5">
+              <p className="text-lg">Try Metlo for Free</p>
               <p className="w-5 h-5">{chevronRight}</p>
             </HStack>
           </Button>
@@ -41,7 +41,7 @@ const BottomCTA = () => {
               rel="noopener noreferrer"
             >
               <HStack align="center">
-                <p>Schedule a Demo</p>
+                <p className="text-lg">Schedule a Demo</p>
                 <p className="w-5 h-5">{chevronRight}</p>
               </HStack>
             </a>

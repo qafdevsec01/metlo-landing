@@ -21,6 +21,8 @@ module.exports = {
         metloblue: "rgb(66, 89, 231)",
         metloblueGradientEnd: "rgb(13, 101, 151)",
         metlobluehover: "rgb(39, 64, 227)",
+        metloblackborder: "rgb(22, 23, 24)",
+        metloblack: "rgb(10, 12, 13)",
         dark: "rgb(16, 17, 19)",
         secondarydark: "rgb(63, 63, 65)",
         griddark: "rgb(31, 33, 35)",

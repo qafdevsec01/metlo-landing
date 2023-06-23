@@ -43,7 +43,8 @@ type StackSpace =
   | 12
   | 14
   | 16
-  | 32;
+  | 32
+  | 40;
 
 const vSpaces: Record<StackSpace, string> = {
   0: "space-y-0",
@@ -61,6 +62,7 @@ const vSpaces: Record<StackSpace, string> = {
   14: "space-y-14",
   16: "space-y-16",
   32: "space-y-32",
+  40: "space-y-40",
 };
 
 const hSpaces: Record<StackSpace, string> = {
@@ -79,6 +81,7 @@ const hSpaces: Record<StackSpace, string> = {
   14: "space-x-14",
   16: "space-x-16",
   32: "space-x-32",
+  40: "space-x-40",
 };
 
 const BaseStack: React.FC<StackProps & { dir: "vertical" | "horizontal" }> = ({

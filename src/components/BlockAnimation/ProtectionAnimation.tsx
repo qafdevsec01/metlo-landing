@@ -102,8 +102,8 @@ const ProtectionAnimation = ({ gridSpacing }: { gridSpacing: number }) => {
           <Image
             src="/logo.svg"
             alt="Metlo"
-            width={gridSpacing}
-            height={gridSpacing}
+            width={gridSpacing * 1.25}
+            height={gridSpacing * 1.25}
             priority
           />
         </div>
