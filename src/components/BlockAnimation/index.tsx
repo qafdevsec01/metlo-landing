@@ -64,7 +64,7 @@ const Protection = () => {
             <p className="pb-2 text-4xl text-gray-200 font-bold">
               Block Attack Requests
             </p>
-            <p className="pb-8 text-gray-400 max-w-xl w-full text-center">
+            <p className="pb-8 text-gray-400 max-w-xl w-full text-center px-6">
               {`Metlo's cloud detection engine identifies bad actors and builds a
             model of how your API works. Each agent pulls this metadata from the
             cloud to block malicious requests in real time.`}

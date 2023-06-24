@@ -24,10 +24,10 @@ const BottomCTA = () => {
   return (
     <div className="max-w-6xl w-full mx-auto px-6 relative overflow-hidden">
       <VStack align="start" space={12}>
-        <p className="text-5xl text-gray-200">
+        <p className="text-5xl text-gray-200 text-center sm:text-left">
           Secure your API <span className="text-metloblue">this {tod}</span>
         </p>
-        <div className="flex items-center gap-6 mb-32">
+        <div className="flex flex-col items-center gap-6 mb-32 sm:flex-row w-full">
           <Button href="https://app.metlo.com/signup" variant="solid">
             <HStack align="center" className="px-2.5">
               <p className="text-lg">Try Metlo for Free</p>
