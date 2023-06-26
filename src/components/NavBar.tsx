@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
@@ -5,6 +8,8 @@ import Image from "next/image";
 import { HStack } from "./Stack";
 import chevronDown from "./Icons/chevron-down";
 import chevronUp from "./Icons/chevron-up";
+import star from "./Icons/star";
+import { GITHUB_REPO_INFO_URL } from "./constants";
 
 const NavLinks: React.FC = () => {
   return (
@@ -106,6 +111,22 @@ const NavLinks: React.FC = () => {
 };
 
 const NavBar = () => {
+  const [starCount, setStarCount] = useState<number>(0);
+
+  useEffect(() => {
+    const fetchRepoInfo = async () => {
+      try {
+        const resp = await fetch(GITHUB_REPO_INFO_URL);
+        const json = await resp.json();
+        const stargazersCount = json["stargazers_count"];
+        if (typeof stargazersCount === "number") {
+          setStarCount(stargazersCount);
+        }
+      } catch {}
+    };
+    fetchRepoInfo();
+  }, []);
+
   return (
     <header
       className="w-full sticky top-0 z-50"
@@ -140,6 +161,36 @@ const NavBar = () => {
             </div>
           </div>
           <div className="flex items-center gap-6">
+            {starCount > 0 ? (
+              <div
+                className="px-4 py-2 border border-slate-700 hidden lg:inline-flex rounded-md text-white gap-6 items-center"
+                style={{ backgroundColor: "rgb(0, 0, 0, 0.5)" }}
+              >
+                <p>Star us on GitHub</p>
+                <div className="grid grid-cols-2 text-sm">
+                  <a
+                    className="p-2 bg-[#1a1e23] hover:bg-gray-600 rounded-l-md inline-flex gap-2 items-center border border-slate-700 hover:border-slate-300"
+                    style={{}}
+                    target="_blank"
+                    href="https://github.com/metlo-labs/metlo"
+                  >
+                    <div className="h-[16px] w-[16px] text-white">{star}</div>
+                    <p className="text-white">Stars</p>
+                  </a>
+                  <a
+                    className="p-2 rounded-r-md text-center text-white focus-within:text-metloblue hover:text-metloblue border-slate-800"
+                    style={{
+                      borderWidth: "1px",
+                      borderLeftWidth: "0",
+                    }}
+                    target="_blank"
+                    href="https://github.com/metlo-labs/metlo/stargazers"
+                  >
+                    <p>{starCount.toLocaleString()}</p>
+                  </a>
+                </div>
+              </div>
+            ) : null}
             <Button href="https://app.metlo.com/login" variant="link">
               Log in
             </Button>

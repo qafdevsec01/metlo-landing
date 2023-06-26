@@ -18,6 +18,9 @@ import FastifyLogo from "./IntegrationLogos/fastify";
 import FlaskLogo from "./IntegrationLogos/flask";
 import DjangoLogo from "./IntegrationLogos/django";
 
+export const GITHUB_REPO_INFO_URL =
+  "https://api.github.com/repos/metlo-labs/metlo";
+
 export enum Language {
   node = "Node",
   python = "Python",
