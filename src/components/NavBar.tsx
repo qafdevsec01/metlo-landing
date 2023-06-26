@@ -151,7 +151,7 @@ const NavBar = async () => {
           </div>
           <div className="flex items-center gap-6">
             {starCount > 0 ? (
-              <div className="grid grid-cols-2 text-sm">
+              <div className="hidden lg:grid grid-cols-2 text-sm">
                 <a
                   className="p-2 bg-[#1a1e23] hover:bg-gray-800 rounded-l-md inline-flex gap-2 items-center border border-slate-700 hover:border-slate-300"
                   target="_blank"
