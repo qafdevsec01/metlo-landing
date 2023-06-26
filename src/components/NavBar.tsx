@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
@@ -10,6 +7,13 @@ import chevronDown from "./Icons/chevron-down";
 import chevronUp from "./Icons/chevron-up";
 import star from "./Icons/star";
 import { GITHUB_REPO_INFO_URL } from "./constants";
+
+const getStarCount = async () => {
+  const res = await fetch(GITHUB_REPO_INFO_URL);
+  const data = await res.json();
+  const starCount = data["stargazers_count"];
+  return typeof starCount === "number" ? starCount : 0;
+};
 
 const NavLinks: React.FC = () => {
   return (
@@ -110,23 +114,8 @@ const NavLinks: React.FC = () => {
   );
 };
 
-const NavBar = () => {
-  const [starCount, setStarCount] = useState<number>(0);
-
-  useEffect(() => {
-    const fetchRepoInfo = async () => {
-      try {
-        const resp = await fetch(GITHUB_REPO_INFO_URL);
-        const json = await resp.json();
-        const stargazersCount = json["stargazers_count"];
-        if (typeof stargazersCount === "number") {
-          setStarCount(stargazersCount);
-        }
-      } catch {}
-    };
-    fetchRepoInfo();
-  }, []);
-
+const NavBar = async () => {
+  const starCount = await getStarCount();
   return (
     <header
       className="w-full sticky top-0 z-50"
@@ -136,7 +125,7 @@ const NavBar = () => {
       }}
     >
       <nav>
-        <Container className="relative max-w-6xl z-50 flex justify-between py-4">
+        <Container className="relative max-w-6xl z-50 flex justify-between py-4 max-h-[68px]">
           <div className="relative z-10 flex items-center gap-4">
             <Link href="/" aria-label="Home">
               <div className="flex gap-2">
