@@ -5,6 +5,15 @@ import Image from "next/image";
 import { HStack } from "./Stack";
 import chevronDown from "./Icons/chevron-down";
 import chevronUp from "./Icons/chevron-up";
+import star from "./Icons/star";
+import { GITHUB_REPO_INFO_URL } from "./constants";
+
+const getStarCount = async () => {
+  const res = await fetch(GITHUB_REPO_INFO_URL);
+  const data = await res.json();
+  const starCount = data["stargazers_count"];
+  return typeof starCount === "number" ? starCount : 0;
+};
 
 const NavLinks: React.FC = () => {
   return (
@@ -105,7 +114,8 @@ const NavLinks: React.FC = () => {
   );
 };
 
-const NavBar = () => {
+const NavBar = async () => {
+  const starCount = await getStarCount();
   return (
     <header
       className="w-full sticky top-0 z-50"
@@ -115,7 +125,7 @@ const NavBar = () => {
       }}
     >
       <nav>
-        <Container className="relative max-w-6xl z-50 flex justify-between py-4">
+        <Container className="relative max-w-6xl z-50 flex justify-between py-4 max-h-[68px]">
           <div className="relative z-10 flex items-center gap-4">
             <Link href="/" aria-label="Home">
               <div className="flex gap-2">
@@ -140,6 +150,30 @@ const NavBar = () => {
             </div>
           </div>
           <div className="flex items-center gap-6">
+            {starCount > 0 ? (
+              <div className="hidden lg:grid grid-cols-2 text-sm">
+                <a
+                  className="p-2 bg-[#1a1e23] hover:bg-gray-800 rounded-l-md inline-flex gap-2 items-center border border-slate-700 hover:border-slate-300"
+                  target="_blank"
+                  href="https://github.com/metlo-labs/metlo"
+                >
+                  <div className="h-[16px] w-[16px] text-white">{star}</div>
+                  <p className="text-white">Stars</p>
+                </a>
+                <a
+                  className="p-2 rounded-r-md text-center text-white focus-within:text-metloblue hover:text-metloblue border-slate-800"
+                  style={{
+                    borderWidth: "1px",
+                    borderLeftWidth: "0",
+                    backgroundColor: "rgb(0, 0, 0, 0.5)",
+                  }}
+                  target="_blank"
+                  href="https://github.com/metlo-labs/metlo/stargazers"
+                >
+                  <p>{starCount.toLocaleString()}</p>
+                </a>
+              </div>
+            ) : null}
             <Button href="https://app.metlo.com/login" variant="link">
               Log in
             </Button>
